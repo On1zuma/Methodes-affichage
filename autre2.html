@@ -1,0 +1,577 @@
+<html lang="fr">
+  <!--structure HTML -->
+  <!--Site adapte pour PC et mobile-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Affichage - WassimMESFIOUI</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <!--notre fiche css -->
+    <script src="js/script.js" defer></script>
+    <!--notre fichier js -->
+    <link rel="icon" type="image/png" href="image/logohautpage.png" />
+    <!--notre petit logo/icon -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <!--Menu de navigation de la page princpale -->
+      <h1><a href="index.html">Les méthodes d'affichage</a></h1>
+      <!--Haut de page -->
+      <!--titre -->
+      <div class="onglets">
+        <a href="index.html">Accueil </a>
+        <!--texte -->
+        <a href="affichagestory.html">Historique d'affichage</a>
+        <a href="affichagegeii.html">L'affichage en GEII </a>
+        <a href="#nous">À propos</a>
+      </div>
+    </nav>
+    <!--fleche vers le haut-->
+    <div id="scroll_to_top">
+      <a href="#top"><img src="image/arrow2.png" alt="Retourner en haut" /></a>
+    </div>
+
+    <h2>Oscilloscope cathodique:</h2>
+
+    <oscillateur>
+      <!--fonction crée pr centrer Oscillateur-->
+      <center>
+        <div id="commande">
+          <div id="bl1">
+            <label>
+              <input
+                type="radio"
+                id="ra1"
+                name="rad"
+                onclick="choix1()"
+                checked="checked"
+              />Manuel</label
+            >
+            <label>
+              <input
+                type="radio"
+                id="ra2"
+                name="rad"
+                onclick="choix2()"
+              />Auto</label
+            >
+          </div>
+          <div id="bl2">
+            <label id="vA">Uy = 100</label>
+            <input
+              type="range"
+              id="valA"
+              min="-100"
+              max="100"
+              step="1"
+              value="30"
+            />
+          </div>
+          <div id="bl3">
+            <label id="vB">Uz = 25</label>
+            <input
+              type="range"
+              id="valB"
+              min="-100"
+              max="100"
+              step="1"
+              value="0"
+            />
+          </div>
+          <input
+            type="button"
+            id="bt1"
+            value="Départ"
+            onclick="depart(this)"
+            style="visibility: hidden"
+          />
+        </div>
+      </center>
+
+      <!--fonction crée pr centrer Oscillateur-->
+      <center>
+        <div id="canv">
+          <canvas
+            id="canvas"
+            width="640"
+            height="440"
+            style="border: 3px solid rgb(0, 0, 0)"
+          ></canvas>
+        </div>
+      </center>
+
+      <script type="text/javascript">
+        // N°651 29/05/2018 ************************
+        const PI = Math.PI,
+          RAD = PI / 180;
+        var fenetre = document.getElementById("canvas");
+        var hh = canvas.getContext("2d");
+        hh.canvas.style.border = "3px solid #000";
+        hh.translate(0.5, 0.5);
+        var Xs, Ys, mouse;
+        var mode = 0;
+        var ecrx = 4,
+          ecry = 3;
+        var C1 = 0,
+          C2 = 0,
+          C3 = 0,
+          C4 = 0;
+        var C5 = 0,
+          C6 = 0,
+          C7 = 0,
+          C8 = 0;
+        var Xobs, Yobs, Zobs;
+        var prevx, prevy;
+        var dphi,
+          dtheta,
+          Phi = 20,
+          Theta = 320;
+        var Ox = [4, 0, 0],
+          Oy = [0, 2.3, 0],
+          Oz = [0, 0, 2.3]; //repere
+        var Ecx = [ecrx, ecrx, ecrx, ecrx],
+          Ecy = [ecry, ecry, -ecry, -ecry],
+          Ecz = [ecry, -ecry, -ecry, ecry]; //plaques
+        var mxPH1 = [0.65, 0.65, -0.65, -0.65],
+          myPH1 = [0.65, -0.65, -0.65, 0.65],
+          mzPH1 = [1, 1, 1, 1]; //plaques
+        var mxPH2 = [0.65, 0.65, -0.65, -0.65],
+          myPH2 = [0.65, -0.65, -0.65, 0.65],
+          mzPH2 = [-1, -1, -1, -1];
+        var mxPV1 = [0.65, 0.65, -0.65, -0.65],
+          myPV1 = [1, 1, 1, 1],
+          mzPV1 = [0.65, -0.65, -0.65, 0.65];
+        var mxPV2 = [0.65, 0.65, -0.65, -0.65],
+          myPV2 = [-1, -1, -1, -1],
+          mzPV2 = [0.65, -0.65, -0.65, 0.65];
+        var Cax = [-1, -1, -1.7, -1.7, -1, -1, -1.7, -1.7]; //Canon
+        var Cay = [0.06, -0.06, -0.06, 0.06, 0.06, -0.06, -0.06, 0.06];
+        var Caz = [0.06, 0.06, 0.06, 0.06, -0.06, -0.06, -0.06, -0.06];
+        var f1x = [0, 0, 0, 0, 0],
+          f1y = [-1, -2, -2, 0, 0],
+          f1z = [0, 0, -2, -2, -1];
+        var f2x = [0, 0],
+          f2y = [1, 2],
+          f2z = [0, 0];
+        var f3x = [0, 0, 0],
+          f3y = [0, 0, 2],
+          f3z = [1, 2, 2];
+        var AYx = [ecrx, ecrx],
+          AYy = [-ecry, ecry],
+          AYz = [0, 0];
+        var cx = [],
+          cy = [],
+          cz = []; //projections
+        var dx = 220,
+          dy = 220,
+          nm2 = 6;
+        var DE = 80;
+        var Uy, vy, vz;
+        var Vy = 30,
+          Vz = 0;
+        var X = [-1, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, ecrx];
+        var ligne = [3],
+          Y = [],
+          Z = [];
+        for (var i = 0; i < 9; i++) {
+          Y[i] = 0;
+          Z[i] = 0;
+        }
+        var PH1 = "rgba(255,0,0,0.2)",
+          PV1 = "rgba(0,0,180,0.2)";
+        var colecran = "rgba(0,128,0,0.4)";
+        const dep = -1.2;
+        var t = 0,
+          timer,
+          t2 = 0,
+          ct = 0;
+        var Xe = [],
+          Ye = [];
+        var Ainput = document.getElementById("valA");
+        var Binput = document.getElementById("valB");
+        document.getElementById("bt1").style.visibility = "hidden";
+        trace();
+
+        // commandes ***********************
+        function stop() {
+          bt1.value = "Animation";
+          clearInterval(timer);
+        }
+
+        function depart(bt1) {
+          if (bt1.value === "Animation") {
+            bt1.value = "Stop";
+            timer = setInterval(trace, 80);
+          } else {
+            stop();
+          }
+        }
+
+        function choix1() {
+          mode = 0;
+          stop();
+          document.getElementById("bt1").style.visibility = "hidden";
+          document.getElementById("bl2").style.visibility = "visible";
+          document.getElementById("bl3").style.visibility = "visible";
+          trace();
+        }
+
+        function choix2() {
+          mode = 1;
+          stop();
+          t = dep;
+          t2 = 0;
+          ct = 0;
+          document.getElementById("bt1").style.visibility = "visible";
+          document.getElementById("bl2").style.visibility = "hidden";
+          document.getElementById("bl3").style.visibility = "hidden";
+          trace();
+        }
+
+        Ainput.addEventListener("mousemove", function () {
+          Vy = parseInt(document.getElementById("valA").value);
+          document.getElementById("vA").textContent = "Uy = " + Vy;
+          trace();
+        });
+
+        Binput.addEventListener("mousemove", function () {
+          Vz = parseInt(document.getElementById("valB").value);
+          document.getElementById("vB").textContent = "Uz = " + Vz;
+          trace();
+        });
+
+        // Utilitaires  ******************************************
+        function drawLine(xi, yi, xf, yf) {
+          hh.beginPath();
+          hh.moveTo(xi, yi);
+          hh.lineTo(xf, yf);
+          hh.stroke();
+        }
+
+        function fillPolygon(X, Y, n, flag) {
+          hh.beginPath();
+          hh.moveTo(X[0], Y[0]);
+          for (var i = 1; i < n; i++) hh.lineTo(X[i], Y[i]);
+          hh.closePath();
+          if (flag) hh.fill();
+          else hh.stroke();
+        }
+
+        function drawPolyline(X, Y, n) {
+          hh.beginPath();
+          hh.moveTo(X[0], Y[0]);
+          for (var i = 1; i < n; i++) hh.lineTo(X[i], Y[i]);
+          hh.stroke();
+        }
+
+        function clip(L, H) {
+          hh.fillStyle = "silver";
+          hh.fillRect(0, 0, L, 20);
+          hh.fillRect(0, 0, 20, H);
+          hh.fillRect(0, H - 20, L, 20);
+          hh.fillRect(L - 20, 0, 20, H);
+        }
+
+        function cercle(xc, yc, R, flag) {
+          hh.beginPath();
+          hh.arc(xc, yc, R, 0, Math.PI * 2);
+          if (flag) hh.fill();
+          else hh.stroke();
+        }
+
+        function cadre3D(x, y, w, ha) {
+          hh.strokeStyle = "rgb(130,130,130)";
+          drawLine(x, y + 1, w - 1, y + 1);
+          drawLine(x, y, x, ha);
+          drawLine(x + 1, y, x + 1, ha - 1);
+          drawLine(x, y, w, y);
+          hh.strokeStyle = "rgb(230,230,230)";
+          drawLine(x, ha, w, ha);
+          drawLine(w, y + 1, w, ha);
+          drawLine(x + 1, ha - 1, w, ha - 1);
+          drawLine(w - 1, y + 2, w - 1, ha);
+        }
+
+        //*******************************************************************************
+        fenetre.addEventListener("mousedown", function (evt) {
+          var cRect = canvas.getBoundingClientRect();
+          var x = Math.round(evt.clientX - cRect.left);
+          var y = Math.round(evt.clientY - cRect.top);
+          Xs = x - 3;
+          Ys = y - 3;
+          prevx = Xs;
+          prevy = Ys;
+          mouse = true;
+        });
+
+        fenetre.addEventListener("mouseup", function (evt) {
+          t = dep;
+          t2 = 0;
+          ct = 0;
+          mouse = false;
+        });
+
+        fenetre.addEventListener("mousemove", function (evt) {
+          if (!mouse) return;
+          var cRect = canvas.getBoundingClientRect();
+          var x = Math.round(evt.clientX - cRect.left);
+          var y = Math.round(evt.clientY - cRect.top);
+          Xs = x - 3;
+          Ys = y - 3;
+          dphi = prevy - Ys;
+          Phi -= dphi;
+          dtheta = Xs - prevx;
+          Theta -= dtheta;
+          prevx = Xs;
+          prevy = Ys;
+          t = dep;
+          t2 = 0;
+          ct = 0;
+          trace();
+        });
+
+        //***3D**********************************************************
+        function initproj(theta, phi) {
+          var Th = RAD * theta;
+          var Ph = RAD * phi;
+          C1 = Math.sin(Th);
+          C2 = Math.sin(Ph);
+          C3 = Math.cos(Th);
+          C4 = Math.cos(Ph);
+          C5 = C3 * C2;
+          C6 = C1 * C2;
+          C7 = C3 * C4;
+          C8 = C1 * C4;
+        }
+
+        function projette(Xi, Yi, vx, vy, vz, tvx, tvy, tvz, n, DE) {
+          //N points; Xi,Yi= origine du plan
+          for (var i = 0; i < n; i++) {
+            Xobs = -vx[i] * C1 + vy[i] * C3;
+            Yobs = -vx[i] * C5 - vy[i] * C6 + vz[i] * C4;
+            Zobs = -vx[i] * C7 - vy[i] * C8 - vz[i] * C2;
+            tvx[i] = Xi + DE * Xobs;
+            tvy[i] = Yi - DE * Yobs;
+            tvz[i] = DE * Zobs;
+          }
+        }
+
+        function projpoint(Xi, Yi, V, X, DE) {
+          //point
+          Xobs = -V[0] * C1 + V[1] * C3;
+          Yobs = -V[0] * C5 - V[1] * C6 + V[2] * C4;
+          Zobs = -V[0] * C7 - V[1] * C8 - V[2] * C2;
+          X[0] = Xi + DE * Xobs;
+          X[1] = Yi - DE * Yobs;
+          X[2] = DE * Zobs;
+        }
+
+        function projdroite(Xi, Yi, Ori, Fin, X, Y, DE) {
+          //droite; Xi,Yi= origine du plan
+          X[0] = Xi + DE * (-Ori[0] * C1 + Ori[1] * C3);
+          Y[0] = Yi - DE * (-Ori[0] * C5 - Ori[1] * C6 + Ori[2] * C4); //X = xdeb,xfin
+          X[1] = Xi + DE * (-Fin[0] * C1 + Fin[1] * C3);
+          Y[1] = Yi - DE * (-Fin[0] * C5 - Fin[1] * C6 + Fin[2] * C4);
+        }
+
+        //******************************************
+
+        function traceaxes() {
+          hh.strokeStyle = "gray";
+          hh.setLineDash([6, 3]);
+          projpoint(dx, dy, Ox, ligne, DE);
+          drawLine(dx, dy, ligne[0], ligne[1]);
+          hh.fillText("X", ligne[0], ligne[1]);
+          projpoint(dx, dy, Oy, ligne, DE);
+          drawLine(dx, dy, ligne[0], ligne[1]);
+          hh.fillText("Y", ligne[0], ligne[1]);
+          projpoint(dx, dy, Oz, ligne, DE);
+          drawLine(dx, dy, ligne[0], ligne[1]);
+          hh.fillText("Z", ligne[0], ligne[1]);
+          projette(dx, dy, AYx, AYy, AYz, cx, cy, cz, 2, DE); //fil2
+          drawPolyline(cx, cy, 2);
+          hh.setLineDash([0]);
+        }
+
+        function trace() {
+          hh.font = "bold 12px Arial";
+          hh.fillStyle = "silver";
+          hh.fillRect(0, 0, 640, 440);
+          hh.fillStyle = "black";
+          initproj(Theta, Phi);
+          hh.lineWidth = 1;
+          if (Theta > 360) Theta -= 360;
+          if (Theta < 0) Theta += 360;
+          traceaxes();
+          hh.strokeStyle = "black";
+          projette(dx, dy, mxPH1, myPH1, mzPH1, cx, cy, cz, 4, DE); //PH1
+          hh.fillStyle = PH1;
+          fillPolygon(cx, cy, 4, true);
+          fillPolygon(cx, cy, 4, false);
+          projette(dx, dy, mxPH2, myPH2, mzPH2, cx, cy, cz, 4, DE); //PH2
+          hh.fillStyle = PH1;
+          fillPolygon(cx, cy, 4, true);
+          fillPolygon(cx, cy, 4, false);
+          projette(dx, dy, mxPV1, myPV1, mzPV1, cx, cy, cz, 4, DE); //PV1
+          hh.fillStyle = PV1;
+          fillPolygon(cx, cy, 4, true);
+          fillPolygon(cx, cy, 4, false);
+          projette(dx, dy, mxPV2, myPV2, mzPV2, cx, cy, cz, 4, DE); //PV2
+          hh.fillStyle = PV1;
+          fillPolygon(cx, cy, 4, true);
+          fillPolygon(cx, cy, 4, false);
+          projette(dx, dy, Ecx, Ecy, Ecz, cx, cy, cz, 4, DE); //ecran
+          hh.fillStyle = colecran;
+          fillPolygon(cx, cy, 4, true);
+          fillPolygon(cx, cy, 4, false);
+          hh.lineWidth = 3;
+          hh.strokeStyle = "black";
+          projette(dx, dy, Cax, Cay, Caz, cx, cy, cz, 8, DE); //Canon
+          for (var i = 0; i < 3; i++)
+            drawLine(cx[i], cy[i], cx[i + 1], cy[i + 1]);
+          for (var i = 4; i < 7; i++)
+            drawLine(cx[i], cy[i], cx[i + 1], cy[i + 1]);
+          for (var i = 0; i < 4; i++)
+            drawLine(cx[i], cy[i], cx[i + 4], cy[i + 4]);
+          drawLine(cx[0], cy[0], cx[3], cy[3]);
+          drawLine(cx[4], cy[4], cx[7], cy[7]);
+          hh.lineWidth = 2;
+          hh.strokeStyle = "blue";
+          projette(dx, dy, f1x, f1y, f1z, cx, cy, cz, 5, DE); //fil1
+          drawPolyline(cx, cy, 5);
+          hh.strokeStyle = "green";
+          hh.fillStyle = "green";
+          projette(dx, dy, f2x, f2y, f2z, cx, cy, cz, 2, DE); //fil2
+          drawPolyline(cx, cy, 2);
+          cercle(cx[1], cy[1], 3, true);
+          hh.strokeStyle = "red";
+          hh.fillStyle = "red";
+          projette(dx, dy, f3x, f3y, f3z, cx, cy, cz, 3, DE); //fil2
+          drawPolyline(cx, cy, 3);
+          cercle(cx[2], cy[2], 3, true);
+          if (mode === 0) {
+            Uy = Vy / 200;
+            Uz = Vz / 200;
+          } else {
+            Uy = 0.5 * t;
+            Uz = 0.3 * Math.sin(t2);
+            t += 0.0125;
+            t2 += 0.1;
+            ct++;
+            hh.fillStyle = "green";
+            hh.fillText("Uy", 25, 40);
+            hh.strokeStyle = "green";
+            drawLine(140 + 80 * dep, 35, 140 + 80 * t, 35);
+            hh.fillStyle = "red";
+            hh.fillText("Uz", 25, 60);
+            hh.strokeStyle = "red";
+            drawLine(140, 55, 140 + 160 * Uz, 55);
+            if (t > 0.95) {
+              t = dep;
+              t2 = 0;
+            }
+          }
+          for (var i = 1; i < 8; i++) {
+            vy = (Uy * i) / 100;
+            Y[i] = vy * i;
+            vz = (Uz * i) / 100;
+            Z[i] = vz * i;
+          }
+          Y[8] = Y[7] + (X[8] - X[7]) * Uy;
+          Z[8] = Z[7] + (X[8] - X[7]) * Uz;
+          hh.strokeStyle = "indigo";
+          projette(dx, dy, X, Y, Z, cx, cy, cz, 9, DE); //faisceau
+          drawPolyline(cx, cy, 9);
+          if (mode === 1) {
+            Xe[ct] = cx[8];
+            Ye[ct] = cy[8];
+            hh.strokeStyle = "yellow";
+            drawPolyline(Xe, Ye, ct);
+          } else {
+            hh.fillStyle = "yellow";
+            cercle(cx[8], cy[8], 2, true);
+          }
+          if (t === dep) ct = 0;
+          hh.lineWidth = 1;
+          clip(640, 440);
+          hh.fillStyle = "black";
+          hh.font = "bold 12px Arial";
+          hh.fillText("\u03b8 = " + Math.round(Theta) + "°", 50, 400);
+          hh.fillText("\u03c6 = " + Math.round(Phi) + "°", 560, 400);
+          hh.lineWidth = 1;
+          cadre3D(20, 20, 620, 420);
+        }
+      </script>
+      <p><br /></p>
+    </oscillateur>
+
+    <!-- texte qui apparait si la résolution est trop petite -->
+    <texterreur>
+      <center>
+        <p>Erreur : la résolution de votre écran est trop petite</p>
+      </center>
+    </texterreur>
+
+    <footer>
+      <!-- realisation du pied de page du site-->
+      <h1>À propos</h1>
+      <!-- le titre du pied de page -->
+      <div class="contacts">
+        <!--Nos colones-->
+        <div class="contact">
+          <h3>Notre travail</h3>
+          <!-- titre notre travail -->
+          <p>
+            Site réalisé après un travail de recherche par les étudiants de GEII
+            de Marseille sur les différentes méthodes d'affichage au fil des
+            années, l'ensemble du site a été codé en HTML CSS et JAVA par Wassim
+            MESFIOUI. La majorité des lignes de codes sont commentées pour
+            permettre une meilleure compréhension de la structure du site afin
+            de pouvoir augmenter la base de données, car les méthodes
+            d'affichage sont loin d'avoir fini d'évoluer. Encore aujourd'hui des
+            nouvelles méthodes apparaissent et font leur preuve !
+          </p>
+          <!-- petite paragraphe -->
+        </div>
+
+        <div class="contact">
+          <h3>Contact</h3>
+          <!--colone contact -->
+          <p>
+            tel du département: 04 13 94 66 03<br />
+            <!-- texte contact -->
+            mail: iut-marseille-geii@univ-amu.fr
+          </p>
+        </div>
+
+        <div class="contact">
+          <h3>Lien rapide</h3>
+          <!-- colone lien rapide -->
+          <a href="index.html">Accueil </a> <br /><br /><!-- NOS LIEN :-->
+          <a href="affichagestory.html">Historique d'affichage</a
+          ><br /><br /><!--  LIEN basique -->
+          <a href="affichagegeii.html">Méthodes d'affichage en GEII </a
+          ><br /><br />
+          <a href="sources.html">Sources</a> <br /><br /><!-- NOS LIEN :-->
+          <a href="minimenu.html">Précisions sur le projet</a><br />
+          <!--  LIEN qui s'ouvre sur une nouvelle page grace à blank:-->
+        </div>
+      </div>
+      <p id="nous">
+        contact du département: 04 13 94 66 03 | &copy; 2021, Les méthodes
+        d'affichage.
+        <a
+          href="https://iut.univ-amu.fr/departements/geii-marseille"
+          target="_blank"
+          >(GEII)</a
+        >
+      </p>
+      <!--  petit texte + lien -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,423 @@
+<html lang="fr">
+  <!--structure HTML -->
+  <!--Site adapte pour PC et mobile-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Affichage - WassimMESFIOUI</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <!--notre fiche css -->
+    <script src="js/script.js" defer></script>
+    <!--notre fichier js -->
+    <link rel="icon" type="image/png" href="image/logohautpage.png" />
+    <!--notre petit logo/icon -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <!--Menu de navigation de la page princpale -->
+      <h1><a href="index.html">Les méthodes d'affichage</a></h1>
+      <!--Haut de page -->
+      <!--titre -->
+      <div class="onglets">
+        <a href="index.html">Accueil </a>
+        <!--texte -->
+        <a href="affichagestory.html">Historique d'affichage</a>
+        <a href="affichagegeii.html">L'affichage en GEII </a>
+        <a href="#nous">À propos</a>
+      </div>
+    </nav>
+    <!--fleche vers le haut-->
+    <div id="scroll_to_top">
+      <a href="#top"><img src="image/arrow2.png" alt="Retourner en haut" /></a>
+    </div>
+
+    <h2>Oscilloscope LCD:</h2>
+
+    <oscillateur>
+      <!--fonction crée pr centrer Oscillateur-->
+      <center>
+        <div id="commande">
+          <label>
+            <input
+              type="radio"
+              id="ra1"
+              name="rad"
+              onclick="choix1()"
+              checked="checked"
+            />Phase fixe</label
+          >
+          <label>&nbsp;&nbsp;&nbsp;</label>
+          <label>
+            <input type="radio" id="ra2" name="rad" onclick="choix2()" />Phase
+            variable</label
+          >
+          <label
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+          >
+          <input
+            type="button"
+            id="bt1"
+            value="Départ"
+            onclick="depart(this)"
+            style="visibility: hidden"
+          />
+        </div>
+      </center>
+
+      <!--fonction crée pr centrer Oscillateur-->
+      <center>
+        <div id="canv">
+          <canvas
+            id="canvas"
+            width="560"
+            height="380"
+            style="border: 3px solid rgb(0, 0, 0)"
+          ></canvas>
+        </div>
+      </center>
+
+      <script type="text/javascript">
+        var fenetre = document.getElementById("canvas");
+        var hh = canvas.getContext("2d");
+        hh.canvas.style.border = "3px solid #000";
+        hh.translate(0.5, 0.5);
+        const PI = Math.PI;
+        var w1 = 200,
+          w2 = 200,
+          phi = 60;
+        var xei, yei, xef, yef;
+        var yc1 = 190,
+          xc1 = 50,
+          r = 4;
+        var ycmin = 100,
+          ycmax = 280;
+        var yc2 = 190,
+          xc2 = 115,
+          yc3 = 160,
+          xc3 = 175;
+        var mouse1 = false;
+        var mouse2 = false;
+        var mouse3 = false;
+        var mode = 0,
+          timer,
+          run = false;
+        document.getElementById("bt1").style.visibility = "hidden";
+        var xs, ys;
+        trace();
+
+        //*********************************************************
+        function choix1() {
+          mode = 0;
+          document.getElementById("bt1").style.visibility = "hidden";
+          phi = 60;
+          yc3 = 160;
+          stop();
+          trace();
+        }
+
+        function choix2() {
+          mode = 1;
+          phi = 0;
+          document.getElementById("bt1").style.visibility = "visible";
+          trace();
+        }
+
+        function stop() {
+          bt1.value = "Départ";
+          run = false;
+          clearInterval(timer);
+        }
+
+        function depart(bt1) {
+          if (bt1.value === "Départ") {
+            bt1.value = "Stop";
+            run = true;
+            timer = setInterval(trace, 80);
+          } else {
+            stop();
+          }
+        }
+
+        //*********************************************************
+
+        function drawLine(xi, yi, xf, yf) {
+          hh.beginPath();
+          hh.moveTo(xi, yi);
+          hh.lineTo(xf, yf);
+          hh.stroke();
+        }
+
+        function droite(xi, yi, xf, yf) {
+          xei = 240 + 30 * (xi + 5); //-5..+5; -5..+5
+          yei = 50 + 30 * (5 - yi);
+          xef = 240 + 30 * (xf + 5);
+          yef = 50 + 30 * (5 - yf);
+          drawLine(xei, yei, xef, yef);
+        }
+
+        function cercle(xc, yc, R, flag) {
+          hh.beginPath();
+          hh.arc(xc, yc, R, 0, Math.PI * 2);
+          if (flag) hh.fill();
+          else hh.stroke();
+        }
+
+        function cadre3D(x, y, w, ha) {
+          hh.strokeStyle = " rgb(130,130,130) ";
+          drawLine(x, y + 1, w - 1, y + 1);
+          drawLine(x, y, x, ha);
+          drawLine(x + 1, y, x + 1, ha - 1);
+          drawLine(x, y, w, y);
+          hh.strokeStyle = "rgb(230,230,230)";
+          drawLine(x, ha, w, ha);
+          drawLine(w, y + 1, w, ha);
+          drawLine(x + 1, ha - 1, w, ha - 1);
+          drawLine(w - 1, y + 2, w - 1, ha);
+        }
+
+        fenetre.addEventListener("mousedown", function (evt) {
+          var cRect = canvas.getBoundingClientRect();
+          var x = Math.round(evt.clientX - cRect.left);
+          var y = Math.round(evt.clientY - cRect.top);
+          xs = x - 3;
+          ys = y - 3;
+          if (xs > xc1 - 4 && xs < xc1 + 4 && ys > yc1 - 4 && ys < yc1 + 4)
+            mouse1 = true;
+          if (xs > xc2 - 4 && xs < xc2 + 4 && ys > yc2 - 4 && ys < yc2 + 4)
+            mouse2 = true;
+          if (xs > xc3 - 4 && xs < xc3 + 4 && ys > yc3 - 4 && ys < yc3 + 4)
+            mouse3 = true;
+          trace();
+        });
+
+        fenetre.addEventListener("mouseup", function (evt) {
+          mouse1 = false;
+          mouse2 = false;
+          mouse3 = false;
+          trace();
+        });
+
+        fenetre.addEventListener("mousemove", function (evt) {
+          var cRect = canvas.getBoundingClientRect();
+          var x = Math.round(evt.clientX - cRect.left);
+          var y = Math.round(evt.clientY - cRect.top);
+          xs = x - 3;
+          ys = y - 3;
+          document.body.style.cursor = "auto";
+          if (xs > xc1 - 4 && xs < xc1 + 4 && ys > yc1 - 4 && ys < yc1 + 4)
+            document.body.style.cursor = "pointer";
+          if (xs > xc2 - 4 && xs < xc2 + 4 && ys > yc2 - 4 && ys < yc2 + 4)
+            document.body.style.cursor = "pointer";
+          if (xs > xc3 - 4 && xs < xc3 + 4 && ys > yc3 - 4 && ys < yc3 + 4)
+            document.body.style.cursor = "pointer";
+          if (mouse1) {
+            yc1 = ys;
+            if (yc1 < ycmin) yc1 = ycmin;
+            if (yc1 > ycmax) yc1 = ycmax;
+          }
+          if (mouse2) {
+            yc2 = ys;
+            if (yc2 < ycmin) yc2 = ycmin;
+            if (yc2 > ycmax) yc2 = ycmax;
+          }
+          if (mouse3) {
+            yc3 = ys;
+            if (yc3 < ycmin) yc3 = ycmin;
+            if (yc3 > ycmax) yc3 = ycmax;
+          }
+          if (!run) trace();
+        });
+        //**********************************************************************
+
+        function volt(type, X, Y, v) {
+          var s = "";
+          var col,
+            d = 9;
+          switch (type) {
+            case 1:
+              col = "lime";
+              s = "" + Math.floor(v);
+              s = s + " Hz";
+              break;
+            case 3:
+              col = "blue";
+              s = "" + Math.floor(v);
+              s = s + "°";
+              d = 14;
+              break;
+            case 2:
+              col = "red";
+              s = "" + Math.floor(v);
+              s = s + " Hz";
+              break;
+          }
+          hh.fillStyle = col;
+          hh.fillRect(X, Y, 50, 30);
+          hh.fillStyle = "white";
+          hh.fillRect(X + 5, Y + 5, 40, 20);
+          hh.strokeStyle = "black";
+          hh.strokeRect(X, Y, 50, 30);
+          hh.strokeRect(X + 5, Y + 5, 40, 20);
+          hh.fillStyle = "black";
+          hh.fillText(s, X + d, Y + 18);
+        }
+
+        function curseur(x, y, col, mouse) {
+          hh.lineWidth = 3;
+          hh.strokeStyle = "rgb(0,0,0)";
+          drawLine(x, ycmin, x, ycmax);
+          hh.lineWidth = 1.8;
+          hh.strokeStyle = "rgb(255,255,255)";
+          drawLine(x + 1, ycmin, x + 1, ycmax);
+          if (mouse) hh.fillStyle = "rgb(0,255,255)";
+          else hh.fillStyle = col;
+          hh.strokeStyle = "rgb(0,0,0)";
+          hh.lineWidth = 1;
+          cercle(x, y, r, true);
+          cercle(x, y, r, false);
+        }
+
+        function generateur() {
+          hh.font = " 10px Arial";
+          volt(1, 31, 60, w1);
+          volt(2, 95, 60, w2);
+          volt(3, 160, 60, phi);
+          hh.font = "bold 12px Arial";
+          hh.fillText("X", 42, 300);
+          hh.fillText("Y", 110, 300);
+          hh.fillText("\u03c6", 172, 300);
+          cadre3D(20, 50, 220, 320);
+        }
+
+        function scope() {
+          hh.fillStyle = "rgb(241,245,242)";
+          hh.fillRect(240, 50, 300, 300); // couleur du fond du cadre
+          hh.strokeStyle = "black";
+          droite(-5, 0, 5, 0);
+          for (var i = -25; i < 26; i++) {
+            if (i % 5 === 0) droite(i / 5, -0.2, i / 5, 0.2);
+            else droite(i / 5, -0.05, i / 5, 0.05);
+          }
+          droite(0, -5, 0, 5);
+          for (var i = -5; i < 6; i++) droite(-0.2, i, 0.2, i);
+          hh.strokeRect(240, 50, 300, 300);
+        }
+
+        function trace() {
+          hh.fillStyle = "rgb(24,167,59)";
+          hh.fillRect(0, 0, 560, 380); // COULEUT BLOQUE FOND
+          hh.font = " bold 12px Arial";
+          hh.fillStyle = "black";
+          hh.lineWidth = 1;
+          var ec1 = 4.0,
+            ec2 = 4.0,
+            xi,
+            yi,
+            xf,
+            yf;
+          var t = 0,
+            theta;
+          curseur(xc1, yc1, "lime", mouse1);
+          w1 = 2 * yc1 - 180;
+          curseur(xc2, yc2, "red", mouse2);
+          w2 = 2 * yc2 - 180;
+          if (mode === 0) {
+            curseur(xc3, yc3, "blue", mouse3);
+            phi = -2 * yc3 + 380;
+          }
+          generateur();
+          if (mode === 1 && run) {
+            phi += 5;
+            if (phi === 360) phi = 0;
+          }
+          theta = (phi * PI) / 180;
+          scope();
+          hh.strokeStyle = "lime";
+          xi = ec1 * Math.cos(w1 * t);
+          yi = ec2 * Math.cos(w2 * t - theta);
+          while (t < 0.5) {
+            t += 0.001;
+            xf = ec1 * Math.cos(w1 * t);
+            yf = ec2 * Math.cos(w2 * t - theta);
+            droite(xi, yi, xf, yf);
+            yi = yf;
+            xi = xf;
+          }
+          //hh.fillText(""+xs+"  "+ys,100,340);
+          hh.lineWidth = 1;
+        }
+      </script>
+
+      <p><br /></p>
+    </oscillateur>
+
+    <!-- texte qui apparait si la résolution est trop petite -->
+    <texterreur>
+      <center>
+        <p>Erreur : la résolution de votre écran est trop petite</p>
+      </center>
+    </texterreur>
+
+    <footer>
+      <!-- realisation du pied de page du site-->
+      <h1>À propos</h1>
+      <!-- le titre du pied de page -->
+      <div class="contacts">
+        <!--Nos colones-->
+        <div class="contact">
+          <h3>Notre travail</h3>
+          <!-- titre notre travail -->
+          <p>
+            Site réalisé après un travail de recherche par les étudiants de GEII
+            de Marseille sur les différentes méthodes d'affichage au fil des
+            années, l'ensemble du site a été codé en HTML CSS et JAVA par Wassim
+            MESFIOUI. La majorité des lignes de codes sont commentées pour
+            permettre une meilleure compréhension de la structure du site afin
+            de pouvoir augmenter la base de données, car les méthodes
+            d'affichage sont loin d'avoir fini d'évoluer. Encore aujourd'hui des
+            nouvelles méthodes apparaissent et font leur preuve !
+          </p>
+          <!-- petite paragraphe -->
+        </div>
+
+        <div class="contact">
+          <h3>Contact</h3>
+          <!--colone contact -->
+          <p>
+            tel du département: 04 13 94 66 03<br />
+            <!-- texte contact -->
+            mail: iut-marseille-geii@univ-amu.fr
+          </p>
+        </div>
+
+        <div class="contact">
+          <h3>Lien rapide</h3>
+          <!-- colone lien rapide -->
+          <a href="index.html">Accueil </a> <br /><br /><!-- NOS LIEN :-->
+          <a href="affichagestory.html">Historique d'affichage</a
+          ><br /><br /><!--  LIEN basique -->
+          <a href="affichagegeii.html">Méthodes d'affichage en GEII </a
+          ><br /><br />
+          <a href="sources.html">Sources</a> <br /><br /><!-- NOS LIEN :-->
+          <a href="minimenu.html">Précisions sur le projet</a><br />
+          <!--  LIEN qui s'ouvre sur une nouvelle page grace à blank:-->
+        </div>
+      </div>
+      <p id="nous">
+        contact du département: 04 13 94 66 03 | &copy; 2021, Les méthodes
+        d'affichage.
+        <a
+          href="https://iut.univ-amu.fr/departements/geii-marseille"
+          target="_blank"
+          >(GEII)</a
+        >
+      </p>
+      <!--  petit texte + lien -->
+    </footer>
+  </body>
+</html>

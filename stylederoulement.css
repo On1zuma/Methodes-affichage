@@ -1,0 +1,957 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/*   police recuperee sur google font, google font police: montserrat   */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+/*police secondaire */
+
+html {
+  scroll-behavior: smooth;
+  /*   QUAND on appui sur un lien maintenant le scrolling n'est pas instantané  */
+  overflow-x: hidden;
+  /* pour qu'il n'y ait pas de scoll de gauche à droite */
+}
+
+.carousel-items {
+  display: flex;
+  overflow-x: scroll;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  flex: 1 0 450px;
+  /*largeur texte */
+  margin-left: 1rem;
+  scroll-snap-align: start;
+}
+
+.carousel-items p {
+  background: rgba(173, 173, 173, 0.089);
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+
+div.texte p {
+  background: rgba(173, 173, 173, 0.089);
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-right: 30%;
+  margin-left: 30%;
+  font-family: "Montserrat", "sans-serif";
+  /*application des polices*/
+}
+
+div.texte div.baka p {
+  background: rgba(0, 0, 0, 0.671);
+  padding-top: 7px;
+  color: white;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-right: 30%;
+  margin-left: 30%;
+  font-family: "Montserrat", "sans-serif";
+  /*application des polices*/
+  size: 111111px;
+}
+
+div.texte div.pointfaiblefort {
+  background: rgba(0, 0, 0, 0.185);
+  padding-top: 7px;
+  color: rgb(48, 48, 48);
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-right: 30%;
+  margin-left: 30%;
+  font-family: "Montserrat", "sans-serif";
+  /*application des polices*/
+  size: 111111px;
+}
+
+div.texte h1 {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-right: 30%;
+  margin-left: 30%;
+  font-family: "Playfair Display", sans-serif;
+  /* changement de police */
+}
+
+ul {
+  list-style-type: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00000065;
+  border-radius: 3px;
+}
+
+body {
+  margin: 0;
+  /*   marge exterieur de l'ellement   */
+  padding: 0;
+  /*   marge interieur de l'ellement   */
+  font-family: "Montserrat", "sans-serif";
+  /*application des polices*/
+}
+
+/* STYLE DE LA BARRE DE NAVIGATION   */
+nav {
+  display: flex;
+  /*   on aligne les elements de navigation */
+  flex-wrap: wrap;
+  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+  justify-content: center;
+  /* centrer les elements  */
+  align-items: center;
+  /*  alligner les elements */
+  border: 5px solid rgb(19, 18, 18);
+  /*  ajout d'une ligne de séparation */
+}
+
+/* travail sur titre:LES METHODES D'AFFICHAGE  */
+nav h1 a {
+  color: rgb(58, 58, 58);
+  /*  couleur du titre */
+  font-family: "Playfair Display", sans-serif;
+  /* changement de police */
+  font-size: 30px;
+  /*  taille du titre */
+  text-decoration: none;
+  /* on retire le soulignement   */
+}
+
+/* travail sur le reste de la BARRE de navigation ex:home, contact...*/
+nav .onglets a {
+  text-decoration: none;
+  /* on retire le soulignement   */
+  color: #000;
+  /* couleur du texte   */
+  margin-right: 10px;
+  /*  ecrat exterieur entre les differents texte de la barre  */
+  border-bottom: 1px solid #000;
+  /*  on ajoute notre propre soulignement  */
+  padding-bottom: 2px;
+  /*  marge interieur entre le texte et le soulignement  */
+}
+
+nav .onglets a:hover {
+  text-decoration: none;
+  /* on retire le soulignement   */
+  color: rgba(0, 0, 0, 0.479);
+  /* couleur du texte du lien*/
+  /* couleur du texte   */
+  margin-right: 10px;
+  /*  ecrat exterieur entre les differents texte de la barre  */
+  border-bottom: 1px solid #000;
+  /*  on ajoute notre propre soulignement  */
+  padding-bottom: 0.5px;
+  /*  marge interieur entre le texte et le soulignement  */
+}
+
+/*  Travail sur le style global des onglets  */
+nav .onglets {
+  margin-top: 3px;
+  /*  pour mieu aligner  */
+  margin-left: 350px;
+  /*  ajout d'une marge exterieur entre TITRE et les autres ONGLETS, on eloigne le logo des liens  */
+  flex-wrap: wrap;
+  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+}
+
+.desegn {
+  /* ajout d'un background */
+
+  position: absolute;
+  /* pour pouvoir deplacer l'objet sans impacter le reste du site */
+
+  left: 50%;
+  /* position the left edge of the element at the middle of the parent */
+
+  transform: translate(-50%, -50%);
+  /* This is a shorthand of */
+  padding-bottom: 700px;
+  /* travail sur le format */
+  background-color: rgba(228, 228, 228, 0.247);
+  /* couleur background */
+  padding-left: 20cm;
+  /* travail sur le format */
+  padding-right: 20cm;
+  /* travail sur le format */
+  margin-top: 10.5cm;
+  /* travail sur le format */
+
+  margin-bottom: auto;
+  /* travail sur le format */
+  z-index: -5;
+  /* on place le background derriere tout */
+  overflow: visible;
+  /* on laisse les depassements */
+}
+
+.desegn p {
+  display: none;
+  /* on retire le texte */
+}
+
+.desegn2 {
+  position: absolute;
+  /* pour pouvoir deplacer l'objet sans impacter le reste du site */
+
+  left: 50%;
+  /* position the left edge of the element at the middle of the parent */
+
+  transform: translate(-50%, -50%);
+  /* This is a shorthand of */
+  padding-bottom: 1000px;
+  /* travail sur le format */
+  background-color: rgba(228, 228, 228, 0.247);
+  /* couleur background */
+  padding-left: 20cm;
+  /* travail sur le format */
+  padding-right: 20cm;
+  /* travail sur le format */
+  margin-top: 13.3cm;
+  /* travail sur le format */
+
+  margin-bottom: auto;
+  /* travail sur le format */
+  z-index: -5;
+  /* on place le background derriere tout */
+  overflow: visible;
+  /* on laisse les depassements */
+}
+
+.desegn2 p {
+  display: none;
+  /* on retire le texte */
+}
+
+/* On stylise notre header  le debut du site aprés la barre Logo+liens*/
+header {
+  display: flex;
+  /* On aligne nos titre  */
+  flex-direction: column;
+  /* On met l'allignement dans le sens qu'on veut ici en colone  */
+  align-items: center;
+  /* on centre les elements  */
+  background: url("image/illuv2.PNG");
+  /* on met en background notre image rangee dans notre dossier*/
+  background-size: cover;
+  color: aliceblue;
+  padding: 210px;
+  /* Taille image HEADER */
+}
+
+/* travail sur titre h1 */
+header h1 {
+  font-family: "Playfair Display", sans-serif;
+  /* changement de police */
+  font-size: 50px;
+  /* On augmente la taille de h1 */
+  text-align: center;
+  /* Texte maintenant aligne au format mobile aussi */
+  background-color: rgba(26, 25, 25, 0.438);
+  /* couleur transparente du background */
+}
+
+/* travail sur titre h4 */
+header h4 {
+  margin-top: -20px;
+  /* on réduit l'ecart entre h1 et h4 */
+  font-family: "Playfair Display", sans-serif;
+  /* changement de police */
+  font-size: 20px;
+  text-align: center;
+  /* Texte maintenant aligne au format mobile aussi necessaire POUR EVITER LES DECALAGES */
+  border-bottom: 1px solid aliceblue;
+  /* ajout d'une ligne pour le style */
+  background-color: rgba(26, 25, 25, 0.432);
+  /* couleur transparente du background */
+}
+
+header a {
+  /* travail sur le BOUTON HEADER au format a*/
+  text-decoration: none;
+  /* on retire le soulignement   */
+  padding: 10px 20px;
+  /* ajout marge interieur de 10px haut et bas et 20px interieur droite et gauche  */
+  background-color: #fff;
+  /* couleur du background du bouton */
+  color: black;
+  /* couleur texte */
+  border: none;
+  /* on retire l'encadrement */
+  font-size: 20px;
+  /* on grossit le texte bouton */
+  font-family: "Playfair Display", sans-serif;
+  /* changement de police */
+  outline: rgb(37, 37, 37);
+  /* quand on click de bouton petite couleure spawn */
+  cursor: pointer;
+  /* ajout apparition pointer quand on passe la souris sur le bouton */
+}
+
+header a:hover {
+  /* travail sur le BOUTON HEADER au format a*/
+  text-decoration: none;
+  /* on retire le soulignement   */
+  padding: 10px 20px;
+  /* ajout marge interieur de 10px haut et bas et 20px interieur droite et gauche  */
+  background-color: rgba(206, 206, 206, 0.13);
+  /* couleur du background du bouton */
+  color: rgb(255, 255, 255);
+  /* couleur texte */
+  border: none;
+  /* on retire l'encadrement */
+  font-size: 20px;
+  /* on grossit le texte bouton */
+  font-family: "Playfair Display", sans-serif;
+  /* changement de police */
+  outline: rgb(37, 37, 37);
+  /* quand on click de bouton petite couleure spawn */
+  cursor: pointer;
+  /* ajout apparition pointer quand on passe la souris sur le bouton */
+}
+
+/* Travail sur les cartes */
+.main {
+  margin-top: 40px;
+  /* on ecart notre main de 40 px du header */
+  display: flex;
+  /* On aligne nos titre  */
+  flex-direction: column;
+  /* On met l'allignement dans le sens qu'on veut ici en colone  */
+  align-items: center;
+  /* en centre les elements  */
+}
+
+.main .content .card .right img {
+  /*on déclare la section principale puis la div centent qui stoque les cartes puis on declare les carte et ensuite la section right et enfin on déclare l'image  */
+  height: 300px;
+  /* on change la taille de l'image qui etait trop grande */
+  width: 450px;
+  /* on modifi la largeur*/
+  margin-top: 5px;
+  /* ajoute espace entre image et texte utile pour mobile*/
+  -webkit-transition: all 1s ease;
+  /* Safari et Chrome */
+  -moz-transition: all 1s ease;
+  /* Firefox */
+  -ms-transition: all 1s ease;
+  /* Internet Explorer 9 */
+  -o-transition: all 1s ease;
+  /* Opera */
+  transition: all 1s ease;
+}
+
+.main .content .card .right:hover img {
+  /* L'image est grossie de 25% */
+  -webkit-transform: scale(1.1);
+  /* Safari et Chrome */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -ms-transform: scale(1.1);
+  /* Internet Explorer 9 */
+  -o-transform: scale(1.1);
+  /* Opera */
+  transform: scale(1.1);
+}
+
+.main .content .card {
+  /* On declare maintenant juste toute nos cartes pour travailler leur deseign*/
+  display: flex;
+  /* pour aligner les elements dans notre carte sur la longueur*/
+  flex-wrap: wrap;
+  /* pour si la resolution ne permet pas d'alligner on les superpose par exemple sur mobile*/
+  justify-content: center;
+  /* centrer les elements  */
+  margin-bottom: 25px;
+  /*  on espace nos deux cartes */
+}
+
+.main .content .card .left {
+  /* on travail sur la partie à droite maintenant */
+  flex: 1 0 30%;
+  /* 30 % de notre carte sera du texte le resete sera pris par l'image*/
+  padding: 20px;
+  /* espace texte bloque*/
+  background-color: rgb(22, 22, 22);
+  /* couleur derriere le texte black*/
+  color: #fff;
+  /* couleur du texte*/
+}
+
+.main .content .card .left a {
+  /* on travail sur notre petit lien */
+  color: #fff;
+  /* couleur du texte du lien*/
+}
+
+.main .content .card .left a:hover {
+  /* on travail sur notre petit lien */
+  color: rgba(255, 255, 255, 0.479);
+  /* couleur du texte du lien*/
+}
+
+.textintro .intro {
+  font-size: 25px;
+  color: rgb(27, 26, 26);
+  display: flex;
+  /*   on aligne les elements de navigation */
+  flex-wrap: wrap;
+  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+  justify-content: center;
+  /* centrer l'elements  */
+  align-items: center;
+  /*  alligner l'elements sur la page */
+  padding-top: 35px;
+  /* on espace  au dessu*/
+  padding-bottom: 1px;
+  /* on espace en dessou*/
+}
+
+footer {
+  /* travail sur le footer */
+  margin-top: 40px;
+  /* on eloigne notre footer des objets au dessu */
+  border-top: 5px solid #131212;
+  /* on crée une ligne de delimitation entre le footer et le reste du site */
+  background-color: #000;
+  /* on met le background en noir*/
+  color: #fff;
+  /* texte en blanc */
+  padding: 30px 100px;
+  /* on redimensionne la bordure du footer haut/bas droite/gauche*/
+  flex-wrap: wrap;
+  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+}
+
+footer h1 {
+  font-family: "Playfair Display", sans-serif;
+  /* style de police du texte titre   */
+  border-bottom: 1px solid white;
+  /*  ajout d'un soulignement  */
+  width: 5cm;
+  /* longueur de la ligne 13% de la page    */
+  padding-bottom: 2px;
+  /* ecart entre titre et ligne   */
+  font-size: 40px;
+  /*  taille du titre */
+  align-items: center;
+  /*  alligner l'elements sur la page */
+}
+
+footer .contacts {
+  /* notre div qui stoque toute les colonnes  */
+  margin-top: -10px;
+  /*on reduit l'espace entre le titre et les paragraphes */
+  display: flex;
+  /* on aligne nos differents paragraphe */
+  flex-wrap: wrap;
+  /* si on peut pas aligner en aligne pas */
+}
+
+footer .contacts .contact {
+  /* on travail ici sur chaque colone */
+  margin-right: 30px;
+  padding: 10px;
+}
+
+footer .contacts .contact p {
+  /* on travail ici sur chaque colone texte */
+  max-width: 450px;
+  color: white;
+}
+
+footer .contacts .contact a {
+  /* on travail ici sur la colone lien */
+  max-width: 450px;
+  color: white;
+}
+
+footer .contacts .contact a:hover {
+  /* on travail ici sur la colone lien */
+  max-width: 450px;
+  color: rgba(255, 255, 255, 0.507);
+}
+
+footer #nous {
+  /* on passe par le lien, id et non pas une classe pour modifier nous */
+  color: rgb(122, 120, 120);
+  /* on change la couleur du petit texte en bas de page */
+}
+
+footer #nous a {
+  color: rgb(122, 120, 120);
+  /* on change la couleur du petit lien */
+}
+
+h2 {
+  color: rgb(71, 70, 70);
+  /*  couleur du titre */
+  font-family: "Playfair Display", sans-serif;
+  /* style de police du texte titre   */
+  font-size: 45px;
+  color: rgb(27, 26, 26);
+  display: flex;
+  /*   on aligne les elements de navigation */
+  flex-wrap: wrap;
+  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+  justify-content: center;
+  /* centrer l'elements  */
+  align-items: center;
+  /*  alligner l'elements sur la page */
+  padding-top: 35px;
+  /* on espace  au dessu*/
+  padding-bottom: 1px;
+  /* on espace en dessou*/
+}
+
+.imirage img {
+  /* Travail sur Image */
+  display: flex;
+  /*   on aligne les elements de navigation */
+  flex-wrap: wrap;
+  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+  justify-content: center;
+  /* centrer l'elements  */
+  align-items: center;
+  /*  alligner l'elements sur la page */
+  padding-top: 35px;
+  /* on espace  au dessu*/
+  padding-bottom: 1px;
+  /* on espace en dessou*/
+}
+
+.lavideo {
+  /* Travail sur video */
+
+  display: flex;
+  /*   on aligne les elements de navigation */
+  flex-wrap: wrap;
+  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+  justify-content: center;
+  /* centrer l'elements  */
+  align-items: center;
+  /*  alligner l'elements sur la page */
+  padding-top: 10px;
+  /* on espace  au dessu*/
+  padding-bottom: 40px;
+  /* on espace en dessou*/
+  margin-top: -1.6cm;
+  /*background: linear-gradient(180deg, rgba(0, 0, 0, 0.048), rgba(255, 255, 255, 0.062));*/
+  margin-left: 23.5%;
+  margin-right: 23.5%;
+  z-index: -1;
+}
+
+/*https://developer.mozilla.org/fr/ bibliotheque officiel de programmation */
+
+/*STYLE des images dans l'accordeon */
+.accordion-item-body-content img {
+  /*on déclare la section principale puis la div centent qui stoque les cartes puis on declare les carte et ensuite la section right et enfin on déclare l'image  */
+  height: 300px;
+  /* on change la taille de l'image qui etait trop grande */
+  width: 500px;
+  /* on modifi la largeur*/
+  margin-top: 5px;
+  /* ajoute espace entre image et texte utile pour mobile*/
+}
+
+/* travail sur l'accordeon global */
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+/* police d'ecriture*/
+
+.accordion {
+  /* travail sur style de l'accordeon global */
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.accordion-item {
+  /* travail sur les items de l'accordeon  */
+  background-color: #fff;
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.accordion-item-header {
+  /* travail sur style de header*/
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-item-header::after {
+  /* travail sur style de header aprés ouverture*/
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-item-header.active::after {
+  /* travail sur style de header ouvert*/
+  content: "\2212";
+}
+
+.accordion-item-body {
+  /* travail sur les paragraphe en general*/
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content {
+  /* travail sur le contenu du texte */
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+@media (max-width: 1230px) {
+  /* adaptation mobile*/
+  html {
+    font-size: 14px;
+  }
+}
+
+/* fin travail sur l'accordeon global */
+
+texterreur {
+  /* texte d'erreur cache */
+  color: white;
+}
+
+/* ajout de propriete en fonction de la resolution grace à une fonction  */
+@media screen and (max-width: 1230px) {
+  /*  conditions si la résolution est trop petite <680px comme sur mobile on retire le margin entre logo et onglets */
+  nav .onglets a {
+    display: none;
+  }
+
+  oscillateur {
+    display: none;
+  }
+
+  div.texte p {
+    background: rgba(173, 173, 173, 0.089);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: 3%;
+    margin-left: 3%;
+    font-family: "Montserrat", "sans-serif";
+    /*application des polices*/
+  }
+
+  div.texte div.baka p {
+    background: rgba(0, 0, 0, 0.671);
+    padding-top: 7px;
+    color: white;
+    padding-bottom: 7px;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: 3%;
+    margin-left: 3%;
+    font-family: "Montserrat", "sans-serif";
+    /*application des polices*/
+    size: 111111px;
+  }
+
+  div.texte div.pointfaiblefort {
+    background: rgba(0, 0, 0, 0.185);
+    padding-top: 7px;
+    color: rgb(48, 48, 48);
+    padding-bottom: 7px;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: 3%;
+    margin-left: 3%;
+    font-family: "Montserrat", "sans-serif";
+    /*application des polices*/
+    size: 111111px;
+  }
+
+  div.texte h1 {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: 3%;
+    margin-left: 3%;
+    font-family: "Playfair Display", sans-serif;
+    /* changement de police */
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .desegn {
+    display: none;
+  }
+
+  .desegn2 {
+    display: none;
+  }
+
+  .lavideo {
+    /* Travail sur video */
+    display: none;
+  }
+
+  texterreur {
+    color: black;
+  }
+
+  imirage img {
+    display: none;
+  }
+
+  nav h1 {
+    display: flex;
+    /*   on aligne les elements de navigation */
+    flex-wrap: wrap;
+    /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+    justify-content: center;
+    /* centrer l'elements  */
+    align-items: center;
+    /*  alligner l'elements sur la page */
+  }
+
+  .main .content .card .right img {
+    display: none;
+  }
+
+  .main .card {
+    margin: 10px;
+    /*  ecart de 10px */
+  }
+
+  .main .content .card .right img {
+    /*  travail sur la taille de l'image  */
+    height: 200px;
+    /*  taille de l'image  */
+    width: 100%;
+    /*  surface de l'image  */
+    margin-top: -0px;
+    /*  marge entre texte et image */
+    margin-bottom: 40px;
+    /* marge entre les cartes */
+  }
+
+  .main .content .card {
+    display: block;
+    /*  on aligne image avec texte  */
+  }
+
+  footer {
+    padding: 30px;
+    /* Taille footer */
+  }
+
+  header {
+    padding: 100px;
+    /* Taille image HEADER */
+  }
+}
+
+/*   travail sur les images profil de la page source*/
+.alligner {
+  display: flex;
+  /*   on aligne les elements de navigation */
+  flex-wrap: wrap;
+  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
+  justify-content: center;
+  /* centrer les elements  */
+  align-items: center;
+  /*  alligner les elements */
+}
+
+.container {
+  /* image profil  */
+  position: relative;
+  width: 25%;
+}
+
+.image {
+  /*  format */
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  /*  effet avec apparition des noms */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #131414;
+}
+
+.container:hover .overlay {
+  /*  effet avec apparition des noms */
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#scroll_to_top {
+  /*  bouton retour en haut  */
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  bottom: 50px;
+  right: 30px;
+  padding-right: 30px;
+  opacity: 0.7;
+}
+
+#scroll_to_top img {
+  width: 68px;
+}
+
+.versmenu a {
+  /*  lien vers notre menu detail  */
+  color: #000;
+  /* couleur du texte   */
+  margin-right: 10px;
+  /*  ecrat exterieur entre les differents texte de la barre  */
+  padding-bottom: 5px;
+  /*  marge interieur entre le texte et le soulignement  */
+  display: flex;
+  justify-content: center;
+  /*  On centre sur x */
+  align-items: center;
+  /*  On centre sur y */
+}
+
+/*  Chargement de la page */
+
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  /*  LONGUEUR DU FOND NOIR */
+  background: black;
+  display: flex;
+  justify-content: center;
+  /*  On centre sur x */
+  align-items: center;
+  /*  On centre sur y */
+}
+
+.lettre {
+  color: blanchedalmond;
+  font-size: 300%;
+  letter-spacing: 5px;
+  margin-bottom: 1000px;
+  animation: flash 1.2s linear infinite;
+}
+
+@keyframes flash {
+  /*   effet flash pour le chargement */
+  0% {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 7px rgb(0, 0, 0);
+  }
+
+  90% {
+    color: rgb(255, 255, 255);
+    text-shadow: none;
+  }
+
+  100% {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 7px rgb(0, 0, 0);
+  }
+}
+
+.lettre:nth-child(1) {
+  /*  ajout de delai pour faire lettre par lettre   */
+  animation-delay: 0.1s;
+}
+
+.lettre:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.lettre:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.lettre:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.lettre:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.lettre:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.lettre:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.lettre:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.lettre:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.lettre:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.fondu-out {
+  animation-delay: 2.5s;
+  opacity: 0;
+  transition: opacity 2.3s ease-in-out;
+  pointer-events: none;
+}
