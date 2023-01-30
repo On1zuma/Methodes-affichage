@@ -331,8 +331,9 @@ h2 {
   border-top: 1px solid;
   border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 }
+
 .loader {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 130%;
   background: black;
@@ -345,7 +346,7 @@ h2 {
   color: blanchedalmond;
   font-size: 300%;
   letter-spacing: 5px;
-  margin-bottom: 600px;
+  margin-bottom: 50vh;
   animation: flash 1.2s linear infinite;
 }
 

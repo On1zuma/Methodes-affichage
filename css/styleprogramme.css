@@ -693,7 +693,7 @@ texterreur {
   align-items: center;
 }
 .loader {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 270%;
   background: black;
