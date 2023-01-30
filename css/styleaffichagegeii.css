@@ -397,9 +397,9 @@ texterreur {
 }
 
 .fondu-out {
-  animation-delay: 5s;
+  animation-delay: 2.5s;
   opacity: 0;
-  transition: opacity 3s ease-in-out;
+  transition: opacity 1s ease-in-out;
   pointer-events: none;
 }
 @media screen and (max-width: 1230px) {
