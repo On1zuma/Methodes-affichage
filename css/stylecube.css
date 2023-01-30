@@ -84,7 +84,7 @@ section.cube img {
 }
 
 section.cubefont {
-  background: url("imageLed/backimgg.png");
+  background: url("../imageled/backimgg.png");
   /* on met en background notre image rangee dans notre dossier*/
   padding-top: 30px;
   padding-bottom: 200px;
@@ -300,7 +300,7 @@ header {
   /* On met l'allignement dans le sens qu'on veut ici en colone  */
   align-items: center;
   /* on centre les elements  */
-  background: url("image/illuv2.PNG");
+  background: url("../image/illuv2.png");
   /* on met en background notre image rangee dans notre dossier*/
   background-size: cover;
   color: aliceblue;

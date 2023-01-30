@@ -1,104 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-/*   police recuperee sur google font, google font police: montserrat   */
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
-/*police secondaire */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 
 html {
   scroll-behavior: smooth;
   /*   QUAND on appui sur un lien maintenant le scrolling n'est pas instantané  */
   overflow-x: hidden;
   /* pour qu'il n'y ait pas de scoll de gauche à droite */
-}
-
-.carousel-items {
-  display: flex;
-  overflow-x: scroll;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-}
-
-.carousel-item {
-  flex: 1 0 450px;
-  /*largeur texte */
-  margin-left: 1rem;
-  scroll-snap-align: start;
-}
-
-.carousel-items p {
-  background: rgba(173, 173, 173, 0.089);
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 7px;
-  padding-left: 7px;
-}
-
-div.texte p {
-  background: rgba(173, 173, 173, 0.089);
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 7px;
-  padding-left: 7px;
-  margin-right: 30%;
-  margin-left: 30%;
-  font-family: "Montserrat", "sans-serif";
-  /*application des polices*/
-}
-
-div.texte div.baka p {
-  background: rgba(0, 0, 0, 0.671);
-  padding-top: 7px;
-  color: white;
-  padding-bottom: 7px;
-  padding-right: 7px;
-  padding-left: 7px;
-  margin-right: 30%;
-  margin-left: 30%;
-  font-family: "Montserrat", "sans-serif";
-  /*application des polices*/
-  size: 111111px;
-}
-
-div.texte div.pointfaiblefort {
-  background: rgba(0, 0, 0, 0.185);
-  padding-top: 7px;
-  color: rgb(48, 48, 48);
-  padding-bottom: 7px;
-  padding-right: 7px;
-  padding-left: 7px;
-  margin-right: 30%;
-  margin-left: 30%;
-  font-family: "Montserrat", "sans-serif";
-  /*application des polices*/
-  size: 111111px;
-}
-
-div.texte h1 {
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 7px;
-  padding-left: 7px;
-  margin-right: 30%;
-  margin-left: 30%;
-  font-family: "Playfair Display", sans-serif;
-  /* changement de police */
-}
-
-ul {
-  list-style-type: none;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
-}
-
-::-webkit-scrollbar {
-  height: 6px;
-  background-color: #f5f5f5;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #00000065;
-  border-radius: 3px;
 }
 
 body {
@@ -218,7 +128,7 @@ nav .onglets {
 
   transform: translate(-50%, -50%);
   /* This is a shorthand of */
-  padding-bottom: 1000px;
+  padding-bottom: 300px;
   /* travail sur le format */
   background-color: rgba(228, 228, 228, 0.247);
   /* couleur background */
@@ -226,7 +136,7 @@ nav .onglets {
   /* travail sur le format */
   padding-right: 20cm;
   /* travail sur le format */
-  margin-top: 13.3cm;
+  margin-top: 4.4cm;
   /* travail sur le format */
 
   margin-bottom: auto;
@@ -250,7 +160,7 @@ header {
   /* On met l'allignement dans le sens qu'on veut ici en colone  */
   align-items: center;
   /* on centre les elements  */
-  background: url("image/illuv2.PNG");
+  background: url("../image/illuv2.png");
   /* on met en background notre image rangee dans notre dossier*/
   background-size: cover;
   color: aliceblue;
@@ -374,31 +284,31 @@ header a:hover {
 }
 
 .main .content .card {
-  /* On declare maintenant juste toute nos cartes pour travailler leur deseign*/
+  /* On déclare maintenant juste toute nos cartes pour travailler leur deseign*/
   display: flex;
-  /* pour aligner les elements dans notre carte sur la longueur*/
+  /* pour aligner les éléments dans notre carte sur la longueur*/
   flex-wrap: wrap;
-  /* pour si la resolution ne permet pas d'alligner on les superpose par exemple sur mobile*/
+  /* pour si la résolution ne permet pas d'aligner on les superpose par exemple sur mobile*/
   justify-content: center;
-  /* centrer les elements  */
+  /* centrer les éléments */
   margin-bottom: 25px;
   /*  on espace nos deux cartes */
 }
 
 .main .content .card .left {
-  /* on travail sur la partie à droite maintenant */
+  /* on travaille sur la partie à droite maintenant */
   flex: 1 0 30%;
-  /* 30 % de notre carte sera du texte le resete sera pris par l'image*/
+  /*30 % de notre carte sera du texte le reste sera pris par l'image*/
   padding: 20px;
   /* espace texte bloque*/
   background-color: rgb(22, 22, 22);
-  /* couleur derriere le texte black*/
+  /* couleur derrière le texte black*/
   color: #fff;
   /* couleur du texte*/
 }
 
 .main .content .card .left a {
-  /* on travail sur notre petit lien */
+  /* on travaille sur notre petit lien */
   color: #fff;
   /* couleur du texte du lien*/
 }
@@ -634,6 +544,95 @@ h2 {
   border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
 }
 
+/*  Chargement de la page */
+
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 130%;
+  /*  LONGUEUR DU FOND NOIR */
+  background: black;
+  display: flex;
+  justify-content: center;
+  /*  On centre sur x */
+  align-items: center;
+  /*  On centre sur y */
+}
+
+.lettre {
+  color: blanchedalmond;
+  font-size: 300%;
+  letter-spacing: 5px;
+  margin-bottom: 600px;
+  animation: flash 1.2s linear infinite;
+}
+
+@keyframes flash {
+  /*   effet flash pour le chargement */
+  0% {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 7px rgb(0, 0, 0);
+  }
+
+  90% {
+    color: rgb(255, 255, 255);
+    text-shadow: none;
+  }
+
+  100% {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 7px rgb(0, 0, 0);
+  }
+}
+
+.lettre:nth-child(1) {
+  /*  ajout de delai pour faire lettre par lettre   */
+  animation-delay: 0.1s;
+}
+
+.lettre:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.lettre:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.lettre:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.lettre:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.lettre:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.lettre:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.lettre:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.lettre:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.lettre:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.fondu-out {
+  animation-delay: 2.5s;
+  opacity: 0;
+  transition: opacity 2.3s ease-in-out;
+  pointer-events: none;
+}
+
 @media (max-width: 1230px) {
   /* adaptation mobile*/
   html {
@@ -648,6 +647,15 @@ texterreur {
   color: white;
 }
 
+.remerciements {
+  margin-left: 5cm;
+  margin-right: 5cm;
+  background-color: rgba(0, 0, 0, 0.123);
+  color: black;
+  font-family: "Gill Sans", sans-serif;
+  padding-bottom: 3px;
+}
+
 /* ajout de propriete en fonction de la resolution grace à une fonction  */
 @media screen and (max-width: 1230px) {
   /*  conditions si la résolution est trop petite <680px comme sur mobile on retire le margin entre logo et onglets */
@@ -659,59 +667,17 @@ texterreur {
     display: none;
   }
 
-  div.texte p {
-    background: rgba(173, 173, 173, 0.089);
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-right: 1px;
-    padding-left: 1px;
-    margin-right: 3%;
-    margin-left: 3%;
-    font-family: "Montserrat", "sans-serif";
-    /*application des polices*/
+  .remerciements {
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  div.texte div.baka p {
-    background: rgba(0, 0, 0, 0.671);
-    padding-top: 7px;
-    color: white;
-    padding-bottom: 7px;
-    padding-right: 1px;
-    padding-left: 1px;
-    margin-right: 3%;
-    margin-left: 3%;
-    font-family: "Montserrat", "sans-serif";
-    /*application des polices*/
-    size: 111111px;
-  }
-
-  div.texte div.pointfaiblefort {
-    background: rgba(0, 0, 0, 0.185);
-    padding-top: 7px;
-    color: rgb(48, 48, 48);
-    padding-bottom: 7px;
-    padding-right: 1px;
-    padding-left: 1px;
-    margin-right: 3%;
-    margin-left: 3%;
-    font-family: "Montserrat", "sans-serif";
-    /*application des polices*/
-    size: 111111px;
-  }
-
-  div.texte h1 {
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-right: 1px;
-    padding-left: 1px;
-    margin-right: 3%;
-    margin-left: 3%;
-    font-family: "Playfair Display", sans-serif;
-    /* changement de police */
-  }
-
-  img {
-    width: 100%;
+  .lettre {
+    color: blanchedalmond;
+    font-size: 200%;
+    letter-spacing: 5px;
+    margin-bottom: 700px;
+    animation: flash 1.2s linear infinite;
   }
 
   .desegn {
@@ -865,93 +831,4 @@ texterreur {
   /*  On centre sur x */
   align-items: center;
   /*  On centre sur y */
-}
-
-/*  Chargement de la page */
-
-.loader {
-  position: absolute;
-  width: 100%;
-  height: 200%;
-  /*  LONGUEUR DU FOND NOIR */
-  background: black;
-  display: flex;
-  justify-content: center;
-  /*  On centre sur x */
-  align-items: center;
-  /*  On centre sur y */
-}
-
-.lettre {
-  color: blanchedalmond;
-  font-size: 300%;
-  letter-spacing: 5px;
-  margin-bottom: 1000px;
-  animation: flash 1.2s linear infinite;
-}
-
-@keyframes flash {
-  /*   effet flash pour le chargement */
-  0% {
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0 7px rgb(0, 0, 0);
-  }
-
-  90% {
-    color: rgb(255, 255, 255);
-    text-shadow: none;
-  }
-
-  100% {
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0 7px rgb(0, 0, 0);
-  }
-}
-
-.lettre:nth-child(1) {
-  /*  ajout de delai pour faire lettre par lettre   */
-  animation-delay: 0.1s;
-}
-
-.lettre:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.lettre:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.lettre:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-.lettre:nth-child(5) {
-  animation-delay: 0.5s;
-}
-
-.lettre:nth-child(6) {
-  animation-delay: 0.6s;
-}
-
-.lettre:nth-child(7) {
-  animation-delay: 0.7s;
-}
-
-.lettre:nth-child(8) {
-  animation-delay: 0.8s;
-}
-
-.lettre:nth-child(9) {
-  animation-delay: 0.9s;
-}
-
-.lettre:nth-child(10) {
-  animation-delay: 1s;
-}
-
-.fondu-out {
-  animation-delay: 2.5s;
-  opacity: 0;
-  transition: opacity 2.3s ease-in-out;
-  pointer-events: none;
 }

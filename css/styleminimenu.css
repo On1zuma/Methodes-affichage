@@ -10,183 +10,6 @@ html {
   /* pour qu'il n'y ait pas de scoll de gauche à droite */
 }
 
-/* PrismJS 1.26.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript&plugins=show-language+normalize-whitespace+toolbar */
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #ccc;
-  background: 0 0;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 1em;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #2d2d2d;
-}
-
-:not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
-}
-
-.token.block-comment,
-.token.cdata,
-.token.comment,
-.token.doctype,
-.token.prolog {
-  color: #999;
-}
-
-.token.punctuation {
-  color: #ccc;
-}
-
-.token.attr-name,
-.token.deleted,
-.token.namespace,
-.token.tag {
-  color: #e2777a;
-}
-
-.token.function-name {
-  color: #6196cc;
-}
-
-.token.boolean,
-.token.function,
-.token.number {
-  color: #f08d49;
-}
-
-.token.class-name,
-.token.constant,
-.token.property,
-.token.symbol {
-  color: #f8c555;
-}
-
-.token.atrule,
-.token.builtin,
-.token.important,
-.token.keyword,
-.token.selector {
-  color: #cc99cd;
-}
-
-.token.attr-value,
-.token.char,
-.token.regex,
-.token.string,
-.token.variable {
-  color: #7ec699;
-}
-
-.token.entity,
-.token.operator,
-.token.url {
-  color: #67cdcc;
-}
-
-.token.bold,
-.token.important {
-  font-weight: 700;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.token.inserted {
-  color: green;
-}
-
-div.code-toolbar {
-  position: relative;
-}
-
-div.code-toolbar > .toolbar {
-  position: absolute;
-  z-index: 10;
-  top: 0.3em;
-  right: 0.2em;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-}
-
-div.code-toolbar:hover > .toolbar {
-  opacity: 1;
-}
-
-div.code-toolbar:focus-within > .toolbar {
-  opacity: 1;
-}
-
-div.code-toolbar > .toolbar > .toolbar-item {
-  display: inline-block;
-}
-
-div.code-toolbar > .toolbar > .toolbar-item > a {
-  cursor: pointer;
-}
-
-div.code-toolbar > .toolbar > .toolbar-item > button {
-  background: 0 0;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  /*-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none **pas utilisé ici**/
-}
-
-div.code-toolbar > .toolbar > .toolbar-item > a,
-div.code-toolbar > .toolbar > .toolbar-item > button,
-div.code-toolbar > .toolbar > .toolbar-item > span {
-  color: #bbb;
-  font-size: 0.8em;
-  padding: 0 0.5em;
-  background: #f5f2f0;
-  background: rgba(224, 224, 224, 0.2);
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
-  border-radius: 0.5em;
-}
-
-div.code-toolbar > .toolbar > .toolbar-item > a:focus,
-div.code-toolbar > .toolbar > .toolbar-item > a:hover,
-div.code-toolbar > .toolbar > .toolbar-item > button:focus,
-div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-div.code-toolbar > .toolbar > .toolbar-item > span:focus,
-div.code-toolbar > .toolbar > .toolbar-item > span:hover {
-  color: inherit;
-  text-decoration: none;
-}
-
 body {
   margin: 0;
   /*   marge exterieur de l'ellement   */
@@ -199,13 +22,13 @@ body {
 /* STYLE DE LA BARRE DE NAVIGATION   */
 nav {
   display: flex;
-  /*   on aligne les elements de navigation */
+  /*   on aligne les ellements de navigation */
   flex-wrap: wrap;
   /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer les elements  */
+  /* centrer les ellements  */
   align-items: center;
-  /*  alligner les elements */
+  /*  alligner les ellements */
   border: 5px solid rgb(19, 18, 18);
   /*  ajout d'une ligne de séparation */
 }
@@ -269,15 +92,15 @@ nav .onglets {
 
   transform: translate(-50%, -50%);
   /* This is a shorthand of */
-  padding-bottom: 560px;
+  padding-bottom: 700px;
   /* travail sur le format */
-  background-color: rgba(228, 228, 228, 0.733);
+  background-color: rgba(228, 228, 228, 0.247);
   /* couleur background */
-  padding-left: 15cm;
+  padding-left: 20cm;
   /* travail sur le format */
-  padding-right: 15cm;
+  padding-right: 20cm;
   /* travail sur le format */
-  margin-top: -1.8cm;
+  margin-top: 10.5cm;
   /* travail sur le format */
 
   margin-bottom: auto;
@@ -302,15 +125,15 @@ nav .onglets {
 
   transform: translate(-50%, -50%);
   /* This is a shorthand of */
-  padding-bottom: 4695px;
+  padding-bottom: 1000px;
   /* travail sur le format */
   background-color: rgba(228, 228, 228, 0.247);
   /* couleur background */
-  padding-left: 15cm;
+  padding-left: 20cm;
   /* travail sur le format */
-  padding-right: 15cm;
+  padding-right: 20cm;
   /* travail sur le format */
-  margin-top: 68.3cm;
+  margin-top: 13.3cm;
   /* travail sur le format */
 
   margin-bottom: auto;
@@ -326,6 +149,23 @@ nav .onglets {
   /* on retire le texte */
 }
 
+.imiback img {
+  /* travail sur IMAGE DE FOND */
+
+  position: absolute;
+  /* pour pouvoir deplacer l'objet sans impacter le reste du site */
+  z-index: -5;
+  /* on place le background derriere tout */
+  transform: translate(0, 0);
+
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+  /*Image s'adapte à l'ecran */
+  max-height: 1200px;
+  /*Image s'adapte pour pas que ca dépasse */
+}
+
 /* On stylise notre header  le debut du site aprés la barre Logo+liens*/
 header {
   display: flex;
@@ -333,8 +173,8 @@ header {
   flex-direction: column;
   /* On met l'allignement dans le sens qu'on veut ici en colone  */
   align-items: center;
-  /* on centre les elements  */
-  background: url("image/illuv2.PNG");
+  /* en centre les ellements  */
+  background: url("../image/illuv2.png");
   /* on met en background notre image rangee dans notre dossier*/
   background-size: cover;
   color: aliceblue;
@@ -391,64 +231,6 @@ header a {
   /* ajout apparition pointer quand on passe la souris sur le bouton */
 }
 
-.programme {
-  margin-top: 0px;
-  /* on ecart notre main de 0 px du header */
-  display: flex;
-  /* On aligne nos titre  */
-  flex-direction: column;
-  /* On met l'allignement dans le sens qu'on veut ici en colone  */
-  align-items: center;
-  /* en centre les elements  */
-  font-family: "Gill Sans", sans-serif;
-  margin-left: 15cm;
-  margin-right: 15cm;
-}
-
-section.programme div.content1 ul li b.lien a {
-  text-decoration: none;
-  /* on retire le soulignement   */
-  color: #000;
-  /* couleur du texte   */
-
-  margin-right: 10px;
-  /*  ecrat exterieur entre les differents texte de la barre  */
-  border-bottom: 1px solid #000;
-  /*  on ajoute notre propre soulignement  */
-  padding-bottom: 0.5px;
-  /*  marge interieur entre le texte et le soulignement  */
-}
-
-section.programme div.content1 ul li b.lien a:hover {
-  text-decoration: none;
-  /* on retire le soulignement   */
-  color: rgb(231, 231, 231);
-  /* couleur du texte   */
-
-  margin-right: 10px;
-  /*  ecrat exterieur entre les differents texte de la barre  */
-  border-bottom: 1px solid rgb(231, 231, 231);
-  /*  on ajoute notre propre soulignement  */
-  padding-bottom: 0.5px;
-  /*  marge interieur entre le texte et le soulignement  */
-}
-
-section.programme div.content1 div.headerr {
-  border-width: 1px;
-  border-style: dotted;
-  border-color: black;
-  padding-bottom: 5px;
-}
-
-section.programme div.content1 h1.titlestyle {
-  background-color: rgb(37, 37, 37);
-  color: white;
-  border-radius: 3px;
-  padding-left: 1cm;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
 /* Travail sur les cartes */
 .main {
   margin-top: 40px;
@@ -458,7 +240,7 @@ section.programme div.content1 h1.titlestyle {
   flex-direction: column;
   /* On met l'allignement dans le sens qu'on veut ici en colone  */
   align-items: center;
-  /* en centre les elements  */
+  /* en centre les ellements  */
 }
 
 .main .content .card .right img {
@@ -469,38 +251,16 @@ section.programme div.content1 h1.titlestyle {
   /* on modifi la largeur*/
   margin-top: 5px;
   /* ajoute espace entre image et texte utile pour mobile*/
-  -webkit-transition: all 1s ease;
-  /* Safari et Chrome */
-  -moz-transition: all 1s ease;
-  /* Firefox */
-  -ms-transition: all 1s ease;
-  /* Internet Explorer 9 */
-  -o-transition: all 1s ease;
-  /* Opera */
-  transition: all 1s ease;
-}
-
-.main .content .card .right:hover img {
-  /* L'image est grossie de 25% */
-  -webkit-transform: scale(1.1);
-  /* Safari et Chrome */
-  -moz-transform: scale(1.1);
-  /* Firefox */
-  -ms-transform: scale(1.1);
-  /* Internet Explorer 9 */
-  -o-transform: scale(1.1);
-  /* Opera */
-  transform: scale(1.1);
 }
 
 .main .content .card {
   /* On declare maintenant juste toute nos cartes pour travailler leur deseign*/
   display: flex;
-  /* pour aligner les elements dans notre carte sur la longueur*/
+  /* pour aligner les ellements dans notre carte sur la longueur*/
   flex-wrap: wrap;
   /* pour si la resolution ne permet pas d'alligner on les superpose par exemple sur mobile*/
   justify-content: center;
-  /* centrer les elements  */
+  /* centrer les ellements  */
   margin-bottom: 25px;
   /*  on espace nos deux cartes */
 }
@@ -525,32 +285,101 @@ section.programme div.content1 h1.titlestyle {
 
 .main .content .card .left a:hover {
   /* on travail sur notre petit lien */
-  color: rgba(255, 255, 255, 0.432);
+  color: rgba(255, 255, 255, 0.479);
   /* couleur du texte du lien*/
 }
 
-.main .content .card .left a ul.z {
-  /* on travail sur notre petit lien */
-  display: none;
-  padding-top: 10cm;
+/* Travail sur les cartes 2*/
+.main2 {
+  margin-top: 40px;
+  /* on ecart notre main de 40 px du header */
+  display: flex;
+  /* On aligne nos titre  */
+  flex-direction: column;
+  /* On met l'allignement dans le sens qu'on veut ici en colone  */
+  align-items: center;
+  /* en centre les ellements  */
 }
 
-.main .content .card .left a:hover div.appar {
+.main2 .content .card .right img {
+  /*on déclare la section principale puis la div centent qui stoque les cartes puis on declare les carte et ensuite la section right et enfin on déclare l'image  */
+  height: 300px;
+  /* on change la taille de l'image qui etait trop grande */
+  width: 450px;
+  /* on modifi la largeur*/
+  margin-top: 5px;
+  /* ajoute espace entre image et texte utile pour mobile*/
+  -webkit-transition: all 1s ease;
+  /* Safari et Chrome */
+  -moz-transition: all 1s ease;
+  /* Firefox */
+  -ms-transition: all 1s ease;
+  /* Internet Explorer 9 */
+  -o-transition: all 1s ease;
+  /* Opera */
+  transition: all 1s ease;
+}
+
+.main2 .content .card .right:hover img {
+  /* L'image est grossie de 25% */
+  -webkit-transform: scale(1.1);
+  /* Safari et Chrome */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -ms-transform: scale(1.1);
+  /* Internet Explorer 9 */
+  -o-transform: scale(1.1);
+  /* Opera */
+  transform: scale(1.1);
+}
+
+.main2 .content .card {
+  /* On declare maintenant juste toute nos cartes pour travailler leur deseign*/
+  display: flex;
+  /* pour aligner les ellements dans notre carte sur la longueur*/
+  flex-wrap: wrap;
+  /* pour si la resolution ne permet pas d'alligner on les superpose par exemple sur mobile*/
+  justify-content: center;
+  /* centrer les ellements  */
+  margin-bottom: 25px;
+  /*  on espace nos deux cartes */
+}
+
+.main2 .content .card .left {
+  /* on travail sur la partie à droite maintenant */
+  flex: 1 0 30%;
+  /* 30 % de notre carte sera du texte le resete sera pris par l'image*/
+  padding: 20px;
+  /* espace texte bloque*/
+  background-color: rgba(238, 238, 238, 0.705);
+  /* couleur derriere le texte black*/
+  color: rgb(0, 0, 0);
+  /* couleur du texte*/
+}
+
+.main2 .content .card .left a {
   /* on travail sur notre petit lien */
-  display: block;
+  color: rgb(0, 0, 0);
+  /* couleur du texte du lien*/
+}
+
+.main2 .content .card .left a:hover {
+  /* on travail sur notre petit lien */
+  color: rgba(0, 0, 0, 0.438);
+  /* couleur du texte du lien*/
 }
 
 .textintro .intro {
   font-size: 25px;
   color: rgb(27, 26, 26);
   display: flex;
-  /*   on aligne les elements de navigation */
+  /*   on aligne les ellements de navigation */
   flex-wrap: wrap;
   /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer l'elements  */
+  /* centrer l'ellements  */
   align-items: center;
-  /*  alligner l'elements sur la page */
+  /*  alligner l'ellements sur la page */
   padding-top: 35px;
   /* on espace  au dessu*/
   padding-bottom: 1px;
@@ -585,7 +414,7 @@ footer h1 {
   font-size: 40px;
   /*  taille du titre */
   align-items: center;
-  /*  alligner l'elements sur la page */
+  /*  alligner l'ellements sur la page */
 }
 
 footer .contacts {
@@ -641,13 +470,13 @@ h2 {
   font-size: 45px;
   color: rgb(27, 26, 26);
   display: flex;
-  /*   on aligne les elements de navigation */
+  /*   on aligne les ellements de navigation */
   flex-wrap: wrap;
   /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer l'elements  */
+  /* centrer l'ellements  */
   align-items: center;
-  /*  alligner l'elements sur la page */
+  /*  alligner l'ellements sur la page */
   padding-top: 35px;
   /* on espace  au dessu*/
   padding-bottom: 1px;
@@ -657,13 +486,13 @@ h2 {
 .imirage img {
   /* Travail sur Image */
   display: flex;
-  /*   on aligne les elements de navigation */
+  /*   on aligne les ellements de navigation */
   flex-wrap: wrap;
   /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer l'elements  */
+  /* centrer l'ellements  */
   align-items: center;
-  /*  alligner l'elements sur la page */
+  /*  alligner l'ellements sur la page */
   padding-top: 35px;
   /* on espace  au dessu*/
   padding-bottom: 1px;
@@ -674,13 +503,13 @@ h2 {
   /* Travail sur video */
 
   display: flex;
-  /*   on aligne les elements de navigation */
+  /*   on aligne les ellements de navigation */
   flex-wrap: wrap;
   /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer l'elements  */
+  /* centrer l'ellements  */
   align-items: center;
-  /*  alligner l'elements sur la page */
+  /*  alligner l'ellements sur la page */
   padding-top: 10px;
   /* on espace  au dessu*/
   padding-bottom: 40px;
@@ -786,25 +615,15 @@ texterreur {
     display: none;
   }
 
-  .programme {
-    display: inline;
-  }
-
-  .programme p {
-    padding-left: 10px;
-    font-family: "Gill Sans", sans-serif;
-  }
-
-  .programme img {
-    width: auto;
-    height: 50px;
-  }
-
   oscillateur {
     display: none;
   }
 
   .desegn {
+    display: none;
+  }
+
+  .imiback {
     display: none;
   }
 
@@ -827,13 +646,13 @@ texterreur {
 
   nav h1 {
     display: flex;
-    /*   on aligne les elements de navigation */
+    /*   on aligne les ellements de navigation */
     flex-wrap: wrap;
     /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
     justify-content: center;
-    /* centrer l'elements  */
+    /* centrer l'ellements  */
     align-items: center;
-    /*  alligner l'elements sur la page */
+    /*  alligner l'ellements sur la page */
   }
 
   .main .content .card .right img {
@@ -867,64 +686,36 @@ texterreur {
     /* Taille footer */
   }
 
+  .main2 .content .card .right img {
+    display: none;
+  }
+
+  .main2 .card {
+    margin: 10px;
+    /*  ecart de 10px */
+  }
+
+  .main2 .content .card .right img {
+    /*  travail sur la taille de l'image  */
+    height: 200px;
+    /*  taille de l'image  */
+    width: 100%;
+    /*  surface de l'image  */
+    margin-top: -0px;
+    /*  marge entre texte et image */
+    margin-bottom: 40px;
+    /* marge entre les cartes */
+  }
+
+  .main2 .content .card {
+    display: block;
+    /*  on aligne image avec texte  */
+  }
+
   header {
     padding: 100px;
     /* Taille image HEADER */
   }
-}
-
-/*   travail sur les images profil de la page source*/
-.alligner {
-  display: flex;
-  /*   on aligne les elements de navigation */
-  flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
-  justify-content: center;
-  /* centrer les elements  */
-  align-items: center;
-  /*  alligner les elements */
-}
-
-.container {
-  /* image profil  */
-  position: relative;
-  width: 25%;
-}
-
-.image {
-  /*  format */
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.overlay {
-  /*  effet avec apparition des noms */
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: #131414;
-}
-
-.container:hover .overlay {
-  /*  effet avec apparition des noms */
-  opacity: 1;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
 
 #scroll_to_top {
@@ -940,113 +731,4 @@ texterreur {
 
 #scroll_to_top img {
   width: 68px;
-}
-
-.versmenu a {
-  /*  lien vers notre menu detail  */
-  color: #000;
-  /* couleur du texte   */
-  margin-right: 10px;
-  /*  ecrat exterieur entre les differents texte de la barre  */
-  padding-bottom: 5px;
-  /*  marge interieur entre le texte et le soulignement  */
-  display: flex;
-  justify-content: center;
-  /*  On centre sur x */
-  align-items: center;
-  /*  On centre sur y */
-}
-
-/*  Chargement de la page */
-
-.loader {
-  position: absolute;
-  width: 100%;
-  height: 270%;
-  /*  LONGUEUR DU FOND NOIR */
-  background: black;
-  display: flex;
-  justify-content: center;
-  /*  On centre sur x */
-  align-items: center;
-  /*  On centre sur y */
-}
-
-.lettre {
-  color: blanchedalmond;
-  font-size: 300%;
-  letter-spacing: 5px;
-  margin-bottom: 1500px;
-  animation: flash 1.2s linear infinite;
-}
-
-@keyframes flash {
-  /*   effet flash pour le chargement */
-  0% {
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0 7px rgb(0, 0, 0);
-  }
-
-  90% {
-    color: rgb(255, 255, 255);
-    text-shadow: none;
-  }
-
-  100% {
-    color: rgb(0, 0, 0);
-    text-shadow: 0 0 7px rgb(0, 0, 0);
-  }
-}
-
-.lettre:nth-child(1) {
-  /*  ajout de delai pour faire lettre par lettre   */
-  animation-delay: 0.1s;
-}
-
-.lettre:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.lettre:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.lettre:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-.lettre:nth-child(5) {
-  animation-delay: 0.5s;
-}
-
-.lettre:nth-child(6) {
-  animation-delay: 0.6s;
-}
-
-.lettre:nth-child(7) {
-  animation-delay: 0.7s;
-}
-
-.lettre:nth-child(8) {
-  animation-delay: 0.8s;
-}
-
-.lettre:nth-child(9) {
-  animation-delay: 0.9s;
-}
-
-.lettre:nth-child(10) {
-  animation-delay: 1s;
-}
-
-.fondu-out {
-  animation-delay: 2.5s;
-  opacity: 0;
-  transition: opacity 2.3s ease-in-out;
-  pointer-events: none;
-}
-
-.justifier {
-  text-align: justify;
-  text-justify: inter-word;
 }
