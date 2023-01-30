@@ -71,7 +71,6 @@ section.cube img {
 }
 
 section.cubefont {
-  background: url("../imageled/backimgg.png");
   padding-top: 30px;
   padding-bottom: 200px;
   background-size: cover;
@@ -79,8 +78,16 @@ section.cubefont {
   font-family: "Montserrat", "sans-serif";
 }
 
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 section.cube2 {
-  background: rgba(22, 22, 22, 0.692);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background: rgb(22, 22, 22);
   margin-bottom: 1cm;
   margin-top: 0cm;
   margin-left: 250px;

@@ -26,11 +26,7 @@
       </div>
     </nav>
 
-    <div id="scroll_to_top">
-      <a href="#top"
-        ><img src="../image/arrow2.png" alt="Retourner en haut"
-      /></a>
-    </div>
+    <div id="arrowToTop"></div>
 
     <section class="main" id="Historique">
       <div class="content">
@@ -192,9 +188,9 @@
             <h1>Travail réalisé par:</h1>
 
             <p>
-              Kévin HACKERㅤㅤㅤㅤ #Chercheur, Arduino
-              ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<br />Wassim
-              MESFIOUI ㅤㅤ#Chercheur, programmeur
+              Kévin HACKER #Chercheur, Arduino
+              <br /><br />
+              Wassim MESFIOUI #Chercheur, programmeur
             </p>
 
             <a href="#lienvers3">Parcourir</a>
@@ -211,15 +207,14 @@
     </centrer>
 
     <div class="alligner">
-      <div class="container">
+      <div class="container" style="margin-right: 1rem">
         <img src="../image/kév.png" alt="Avatar" class="image" />
         <div class="overlay">
           <div class="text">Kévin HACKER</div>
         </div>
       </div>
-      <p>ㅤㅤㅤㅤ</p>
 
-      <div class="container">
+      <div class="container" style="margin-left: 1rem">
         <img src="../image/wass.png" alt="Avatar" class="image" />
         <div class="overlay">
           <div class="text">Wassim MESFIOUI</div>
@@ -227,10 +222,6 @@
       </div>
     </div>
 
-    <p>
-      ㅤ<br /><br />
-      ㅤ
-    </p>
     <div class="remerciements">
       <center>
         <h2>Remerciement:</h2>
@@ -261,13 +252,5 @@
     </div>
 
     <div id="footerContainer"></div>
-
-    <script>
-      fetch("boxes/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.querySelector("#footerContainer").innerHTML = data;
-        });
-    </script>
   </body>
 </html>

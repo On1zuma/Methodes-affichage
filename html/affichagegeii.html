@@ -38,11 +38,8 @@
         <a href="#nous">À propos</a>
       </div>
     </nav>
-    <div id="scroll_to_top">
-      <a href="#top"
-        ><img src="../image/arrow2.png" alt="Retourner en haut"
-      /></a>
-    </div>
+
+    <div id="arrowToTop"></div>
 
     <section class="main" id="Historique">
       <div class="content">
@@ -364,13 +361,5 @@
     </script>
 
     <div id="footerContainer"></div>
-
-    <script>
-      fetch("boxes/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.querySelector("#footerContainer").innerHTML = data;
-        });
-    </script>
   </body>
 </html>

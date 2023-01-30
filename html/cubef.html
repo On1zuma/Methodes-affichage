@@ -26,11 +26,8 @@
       </div>
     </nav>
 
-    <div id="scroll_to_top">
-      <a href="#top"
-        ><img src="../image/arrow2.png" alt="Retourner en haut"
-      /></a>
-    </div>
+    <div id="arrowToTop"></div>
+
     <section class="main" id="Historique">
       <div class="content">
         <div class="card">
@@ -64,7 +61,7 @@
         </div>
         <br />
         <center>
-          <a href="../arduino/arduino.md" target="blank">Code arduino</a>
+          <a href="cube.html">Plus d'information</a>
         </center>
         <br />
         <br />
@@ -102,7 +99,6 @@
             </li>
             <li class="carousel-item">
               <div class="card">
-                -->
                 <div class="card-content">
                   <img src="../imageLed/Image4.jpg" alt="Image4" />
                 </div>
@@ -130,13 +126,5 @@
     </section>
 
     <div id="footerContainer"></div>
-
-    <script>
-      fetch("boxes/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.querySelector("#footerContainer").innerHTML = data;
-        });
-    </script>
   </body>
 </html>
