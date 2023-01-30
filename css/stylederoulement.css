@@ -170,7 +170,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url("../image/illuv2.png");
+  background: url("../img/image/illuv2.png");
   background-size: cover;
   color: aliceblue;
   padding: 210px;
