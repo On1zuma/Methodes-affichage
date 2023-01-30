@@ -295,81 +295,14 @@
         </div>
     </section>
 
+    <div id="footerContainer"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer>
-        <!-- realisation du pied de page du site-->
-        <h1>À propos</h1><!-- le titre du pied de page -->
-        <div class="contacts">
-            <!--Nos colones-->
-            <div class="contact">
-                <h3>Notre travail</h3><!-- titre notre travail -->
-                <p>Site réalisé après un travail de recherche par les étudiants de GEII de Marseille sur les différentes
-                    méthodes d'affichage au fil des années, l'ensemble du site a été codé en HTML CSS et JAVA par Wassim
-                    MESFIOUI. La majorité des lignes de codes sont commentées pour permettre une meilleure compréhension
-                    de la structure du site afin de pouvoir augmenter notre base de données, car les méthodes
-                    d'affichage sont loin d'avoir fini d'évoluer. Encore aujourd'hui des nouvelles méthodes apparaissent
-                    et font leur preuve !</p><!-- petite paragraphe -->
-            </div>
-
-            <div class="contact">
-                <h3>Contact</h3>
-                <!--colone contact -->
-                <p>
-                    tel du département: 04 13 94 66 03<br /> <!-- texte contact -->
-                    mail: iut-marseille-geii@univ-amu.fr
-                </p>
-            </div>
-
-            <div class="contact">
-                <h3>Lien rapide</h3><!-- colone lien rapide -->
-                <a href="../index.html">Accueil </a> <br /><br /><!-- NOS LIEN :-->
-                <a href="affichagestory.html">Historique d'affichage</a><br /><br /><!--  LIEN basique -->
-                <a href="affichagegeii.html">Méthodes d'affichage en GEII </a><br /><br />
-                <a href="sources.html">Sources</a> <br /><br /><!-- NOS LIEN :-->
-                <a href="minimenu.html">Précisions sur le projet</a><br />
-                <!--  LIEN qui s'ouvre sur une nouvelle page grace à blank:-->
-            </div>
-        </div>
-        <p id="nous">contact du département: 04 13 94 66 03 | &copy; 2021, Les méthodes d'affichage. <a
-                href="https://iut.univ-amu.fr/departements/geii-marseille" target="_blank">(GEII)</a></p>
-        <!--  petit texte + lien -->
-
-    </footer>
-
-
+    <script>
+      fetch("boxes/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.querySelector("#footerContainer").innerHTML = data;
+        });
+    </script>
 </body>
-
 </html>

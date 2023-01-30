@@ -260,55 +260,14 @@
       </center>
     </div>
 
-    <footer>
-      <h1>À propos</h1>
+    <div id="footerContainer"></div>
 
-      <div class="contacts">
-        <div class="contact">
-          <h3>Notre travail</h3>
-
-          <p>
-            Site réalisé après un travail de recherche par les étudiants de GEII
-            de Marseille sur les différentes méthodes d'affichage au fil des
-            années, l'ensemble du site a été codé en HTML CSS et JAVA par Wassim
-            MESFIOUI. La majorité des lignes de codes sont commentées pour
-            permettre une meilleure compréhension de la structure du site afin
-            de pouvoir augmenter la base de données, car les méthodes
-            d'affichage sont loin d'avoir fini d'évoluer. Encore aujourd'hui des
-            nouvelles méthodes apparaissent et font leur preuve !
-          </p>
-        </div>
-
-        <div class="contact">
-          <h3>Contact</h3>
-
-          <p>
-            tel du département: 04 13 94 66 03<br />
-
-            mail: iut-marseille-geii@univ-amu.fr
-          </p>
-        </div>
-
-        <div class="contact">
-          <h3>Lien rapide</h3>
-
-          <a href="../index.html">Accueil </a> <br /><br />
-          <a href="affichagestory.html">Historique d'affichage</a><br /><br />
-          <a href="affichagegeii.html">Méthodes d'affichage en GEII </a
-          ><br /><br />
-          <a href="sources.html">Sources</a> <br /><br />
-          <a href="minimenu.html">Précisions sur le projet</a><br />
-        </div>
-      </div>
-      <p id="nous">
-        contact du département: 04 13 94 66 03 | &copy; 2021, Les méthodes
-        d'affichage.
-        <a
-          href="https://iut.univ-amu.fr/departements/geii-marseille"
-          target="_blank"
-          >(GEII)</a
-        >
-      </p>
-    </footer>
+    <script>
+      fetch("boxes/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.querySelector("#footerContainer").innerHTML = data;
+        });
+    </script>
   </body>
 </html>
