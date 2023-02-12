@@ -39,7 +39,7 @@ fetch("/html/components/arrow.html")
     document.querySelector("#arrowToTopIndex").innerHTML = data;
   });
 
-// footer components index
+// footer components
 fetch("components/footer.html")
   .then((response) => response.text())
   .then((data) => {
@@ -51,4 +51,18 @@ fetch("/html/components/footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.querySelector("#footerContainerIndex").innerHTML = data;
+  });
+
+//nav components
+fetch("components/nav.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.querySelector("#appnavbar").innerHTML = data;
+  });
+
+// nav components index
+fetch("/html/components/nav.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.querySelector("#appnavbarIndex").innerHTML = data;
   });

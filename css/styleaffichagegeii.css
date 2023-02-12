@@ -284,17 +284,16 @@ imirage img {
 }
 
 .accordion-item-body-content img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .accordion-item-body-content-image {
-  height: 400px;
-  width: 350px;
+  height: auto;
+  width: auto;
   padding-bottom: 1px;
-  padding-left: 10;
-  margin-bottom: -1.7cm;
-  margin-top: -1cm;
 }
 
 @media (max-width: 1230px) {
