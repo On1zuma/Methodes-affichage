@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMDA</title>
+    <link rel="stylesheet" href="../css/stylecube.css" />
+
+    <script src="../js/script.js" defer></script>
+
+    <link rel="icon" type="image/png" href="../img/image/logohautpage.png" />
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/scroll.js" defer></script>
+  </head>
+
+  <body>
+    <div id="appnavbar"></div>
+
+    <div id="arrowToTop"></div>
+
+    <section class="cube">
+      <h2>Cube arduino</h2>
+      <br />
+      <h1><em>Composants nécessaire cube 5*5*5 :</em></h1>
+      <ul>
+        <li>- 130 LEDS à diffusion 5mm</li>
+        <li>- 25 résistances 330 ohms 1/4 watt</li>
+        <li>- 5 résistances 1k ohms 1/4 watt</li>
+        <li>- 5 transistors 2N2222 NPN TO-92</li>
+        <li>- 2 barrettes femelle 40 broches 2,54 mm</li>
+        <li>- 2 barrettes mâle 40 broches 2,54 mm</li>
+        <li>
+          - câble en nappe 10 voies ou peu importe ca évite de prendre trop de
+          place
+        </li>
+        <li>- fils 0,22mm</li>
+        <li>- carte Arduino : Arduino Mega 2560 REV3</li>
+        <li>- étain</li>
+        <li>- PCB 12*18( de ce type et pré-percé de préférence)</li>
+      </ul>
+      <center>
+        <img
+          src="../img/image/cube1.jpg"
+          title="Travail réalisé par https://www.joom.com/ru/products/61cec402baf59101299a9157"
+          alt="error"
+        />
+      </center>
+      <br />
+      <h1><em>Étapes réalisation Cube 5*5*5 :</em></h1>
+      <p>
+        Vérifier d’avoir tous les éléments nécessaire pour l’ensemble de la
+        réalisation
+      </p>
+      <p>
+        Vérifier que toutes les led fonctionnent grâce à une pile/batterie 3,3V
+      </p>
+      <p>Faire le schéma global</p>
+      <center>
+        <img
+          src="../img/image/cube2.png"
+          width="580"
+          height="400"
+          title="Travail réalisé par trybotics"
+          alt="error"
+        />
+      </center>
+      <br />
+      <p>Préparer un support pour la base du cube</p>
+      <center>
+        <img src="../img/image/cube3.jpg" width="70%" alt="error" />
+      </center>
+      <br />
+      <p>Souder toutes les led en faisant attention à l’anode et la cathode</p>
+      <center>
+        <img
+          src="../img/image/cube4.jpg"
+          width="70%"
+          title="Travail réalisé par 芭蕉葉上聽雨聲"
+          alt="error"
+        />
+      </center>
+      <p>
+        Souder tous les composants sur le PCB (résistances, carte, transi,
+        barrettes) et faire les liaisons grâces aux fils (et câbles en nappe si
+        dispo) avec les pattes du cubes.
+      </p>
+      <p><strong>Réalisation terminée</strong></p>
+      <br />
+      <h1>Programmation</h1>
+      <p>
+        Test des LEDS avec Arduino (juste allumer et éteindre chaque led pour
+        voir si une a cramé/dans le mauvais sens)
+      </p>
+      <p>Créer notre propre programme</p>
+      <center>
+        <br />
+        <a
+          style="text-align: center"
+          href="../arduino/arduino.md"
+          target="blank"
+          >Code arduino</a
+        >
+      </center>
+    </section>
+
+    <div id="footerContainer"></div>
+  </body>
+</html>

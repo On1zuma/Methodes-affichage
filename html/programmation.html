@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMDA</title>
+    <link rel="stylesheet" href="../css/styleprogramme.css" />
+
+    <script src="../js/prism.js" defer></script>
+
+    <link rel="icon" type="image/png" href="../img/image/logohautpage.png" />
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/scroll.js" defer></script>
+  </head>
+
+  <body>
+    <div id="appnavbar"></div>
+
+    <div id="arrowToTop"></div>
+
+    <section class="main" id="autreinfo">
+      <div class="content">
+        <div class="card">
+          <div class="left">
+            <h1>Programmation</h1>
+            <p>
+              Dans cette partie nous parlerons davantage de la programmation du
+              site et de la structure de celui-ci.
+            </p>
+            <a href="#versprog">Parcourir </a>
+          </div>
+          <div class="right">
+            <img src="../img/image/prog4.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="desegn"></div>
+
+    <div class="desegn2"></div>
+
+    <section class="programme">
+      <div class="content1" id="versprog">
+        <p>La programmation de notre site a été faite en plusieurs étapes</p>
+        <ul>
+          <li>
+            <b class="lien"><a href="#1">Réalisation d’un code HTML</a> </b>
+          </li>
+          <li>
+            <b class="lien"><a href="#2"> Ajout de design via CSS</a> </b>
+          </li>
+          <li>
+            <b class="lien"
+              ><a href="#3"
+                >Ajout de mécanismes via JAVA SCRIPT si nécessaire
+              </a>
+            </b>
+          </li>
+          <li>
+            <b class="lien"><a href="#4">Hébergement WEB</a> </b>
+          </li>
+        </ul>
+
+        <p><br /></p>
+        <p>
+          Pour la réalisation de ce projet nous avons utilisé le logiciel
+          <b class="term">Visual studio code</b> qui permet d’être plus
+          performant lors de la programmation
+        </p>
+        <p><br /></p>
+        <h1 id="1" class="titlestyle">#HTML</h1>
+        <ul>
+          <li>
+            <b class="lien"><a href="#2"> Ajout de design via CSS</a> </b>
+          </li>
+          <li>
+            <b class="lien"
+              ><a href="#3"
+                >Ajout de mécanismes via JAVA SCRIPT si nécessaire
+              </a>
+            </b>
+          </li>
+          <li>
+            <b class="lien"><a href="#4">Hébergement WEB</a> </b>
+          </li>
+        </ul>
+        <br />
+        <p>
+          Dans un premier temps après avoir réalisé un design brut sur Word nous
+          avons commencé à programmer le site en HTML.<br />Puis, nous avons
+          structuré la page avec la tête du code HTML et la zone corp.
+        </p>
+
+        <pre>
+            <code class="language-html">
+                    <xmp>
+                        <head> 
+                            <meta charset="UTF-8"> 
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Affichage - WassimMESFIOUI</title>
+                            <link rel="stylesheet" href="../css/style.css"> 
+                            <script src="script.js" defer></script>
+                        </head>   
+                    </xmp>
+            </code>
+        </pre>
+
+        <br />
+        <p>
+          Ensuite, nous avons créé des sections pour pouvoir organiser notre
+          code (tout cela dans la zone corp du programme). Par exemple notre
+          section header.
+        </p>
+
+        <pre>
+            <code class="language-html">
+                    <xmp>
+                        
+                        <header>
+                        ...  
+                        </header>
+
+                    </xmp>
+            </code>
+        </pre>
+
+        <br />
+        <p>
+          Enfin nous avons complété nos sections avec l'ajout de sous-sections
+          avec des images, du texte, des liens, selon nos besoins.
+        </p>
+        <p>ci-dessou on retrouve un titre, un sous-titre et un lien.</p>
+
+        <pre>
+            <code class="language-html">
+                    <xmp>
+                    
+                    <header>
+                        <h1>Les méthodes d'affichage</h1>
+                        <h4>Projet tutoré du DUT GEII</h4>
+                        <a href="#Historique">Parcourir</a> 
+                    </header>
+                    </xmp>
+            </code>
+        </pre>
+
+        <p>Ce code HTML nous donne alors cela :</p>
+        <center>
+          <div class="headerr">
+            <h1>Les méthodes d'affichage</h1>
+
+            <h4>Projet tutoré du DUT GEII</h4>
+
+            <a href="#Historique">Parcourir</a>
+          </div>
+        </center>
+        <br />
+        <p>
+          On peut bien voir ici alors l’apparition de notre titre
+          <b class="term">« Les méthodes d'affichage »</b> l’apparition de notre
+          sous-titre <b class="term">« Projet tutoré du DUT GEII »</b> et
+          l’apparition de notre lien <b class="term">« Parcourir »</b>
+        </p>
+        <br />
+
+        <h1 id="2" class="titlestyle">#CSS</h1>
+        <ul>
+          <li>
+            <b class="lien"><a href="#1">Réalisation d’un code HTML</a> </b>
+          </li>
+          <li>
+            <b class="lien"
+              ><a href="#3"
+                >Ajout de mécanismes via JAVA SCRIPT si nécessaire
+              </a>
+            </b>
+          </li>
+          <li>
+            <b class="lien"><a href="#4">Hébergement WEB</a> </b>
+          </li>
+        </ul>
+        <br />
+        <p>
+          Pour styliser notre code nous avons alors utilisé CSS. <br />
+          Le CSS rend le code HTML plus "propre" facilitant le travail des
+          robots d'indexation web.
+        </p>
+        <p>
+          Grace à notre travail au préalable sur l’organisation des sections
+          dans notre HTML nous avons pu styliser notre page web plus
+          efficacement.<br />(le code HTML du modèle personnalisé est en quelque
+          sorte le squelette du site web, tandis que le code CSS en est la peau)
+        </p>
+        <p>
+          Pour styliser notre code html ci-dessus nous avons créé un fichier
+          CSS. <br />
+          Pour appliquer notre CSS sur notre HTML, nous reprenons le nom de la
+          section pour pouvoir structurer tout le bloque html grâce à CSS
+        </p>
+        <p>Par exemple: « header » et le nom de notre section Html.</p>
+
+        <pre><code class="language-css">
+                /* On stylise notre header  (notre bannière) */
+                header{
+                    display:flex;/* On aligne nos titre  */
+                    flex-direction: column;/* On met l'alignement des objets dans le sens qu'on veut ici en colonne  */
+                    align-items: center; /* on centre les éléments  */
+                    background: url('image/illuv2.PNG'); /* on met en background notre image rangée dans notre dossier image*/
+                    background-size: cover;  /* background couvre notre page de gauche à droite*/
+                    color: aliceblue;	/* couleur texte */
+                    padding: 210px;    /* Taille image de fond */  
+                }
+            </code></pre>
+        <p>
+          Puis on stylise les sous-sections du header par exemple la
+          sous-section h1 (notre titre, « Les méthodes d'affichage » pour
+          pouvoir structuré seulement la sous-section choisit).
+        </p>
+
+        <pre><code class="language-css">
+                /* travail sur titre h1 */
+                header h1{
+                    font-family:'Playfair Display', sans-serif;/* changement de police */ 
+                    font-size: 50px; /* On augmente la taille de h1 */
+                    text-align: center ;/* On aligne le texte (format mobile)*/
+                    background-color: rgba(26, 25, 25, 0.438); /* couleur transparente du background */
+                }  </code></pre>
+        <br />
+        <p>
+          Résultat : (Nous sommes partis sur un design noir et blanc, moderne
+          que l'on peut retrouver sur des nombreux sites actuel)
+        </p>
+
+        <header>
+          <h1>Les méthodes d'affichage</h1>
+
+          <h4>Projet tutoré du DUT GEII</h4>
+
+          <a href="#Historique">Parcourir</a>
+        </header>
+        <br /><br /><br />
+        <h1 id="3" class="titlestyle">#Java</h1>
+        <ul>
+          <li>
+            <b class="lien"><a href="#1">Réalisation d’un code HTML</a> </b>
+          </li>
+          <li>
+            <b class="lien"><a href="#2"> Ajout de design via CSS</a> </b>
+          </li>
+          <li>
+            <b class="lien"><a href="#4">Hébergement WEB</a> </b>
+          </li>
+        </ul>
+        <br />
+        <p>
+          Sur notre page Web nous avons pu utiliser java pour créer un effet de
+          chargement par exemple
+        </p>
+
+        <pre><code class="language-js">
+            const loader = document.querySelector('.loader');//effet de chargement 
+
+            window.addEventListener('load', () =>{)//Ajout d’un événement
+                  loader.classList.add('fondu-out')//effet fin de chargement "sur le css"
+
+            });</code></pre>
+
+        <p>
+          Ici notre code java détecte le chargement de la page et affiche «
+          .loader » tant que la page charge. Puis affiche notre « .fondu-out »
+          quand la page a chargé
+        </p>
+        <p>
+          La structure de notre « .loader » s’apparente à la structure de notre
+          header CSS+HTML (on affiche un texte de chargement ou autre sur fond
+          noir)
+        </p>
+        <p>
+          Notre .fondu-out et un programme CSS qui permet de faire alors
+          disparaitre notre .loarder quand la page est chargée.
+        </p>
+
+        <pre><code class="language-css">
+                .fondu-out{
+                    animation-delay: 2.5s; ;/* temps d’animation */
+                    opacity: 0; ;/* opacité finale à 0 donc n’existe plus sur la page*/
+                    transition: opacity 2.3s ease-in-out; ;/* transition de visible à non visible */
+                    pointer-events: none; ;/* pas d’évènement ou interaction possible avec le chargement*/
+                }
+                </code></pre>
+        <br /><br /><br />
+        <h1 id="4" class="titlestyle">#Hébergement WEB</h1>
+        <ul>
+          <li>
+            <b class="lien"><a href="#1">Réalisation d’un code HTML</a> </b>
+          </li>
+          <li>
+            <b class="lien"><a href="#2"> Ajout de design via CSS</a> </b>
+          </li>
+          <li>
+            <b class="lien"
+              ><a href="#3"
+                >Ajout de mécanismes via JAVA SCRIPT si nécessaire
+              </a>
+            </b>
+          </li>
+        </ul>
+        <br />
+        <p>Pour l’hébergement nous avons comparée différentes plateformes</p>
+        <center>
+          <img src="../img/image/h1.png" alt="" /> <br />
+          <img src="../img/image/H2.png" alt="" /> <br />
+
+          <img src="../img/image/H4.png" alt="" />
+          <img src="../img/image/H5.png" alt="" />
+        </center>
+        <p>
+          L’ensemble de ces plateformes se valent et permettent un hébergement
+          gratuit sans limite de temps, mais avec des conditions d’espaces de
+          500 mo en général sauf pour DRIVE qui propose 15go
+        </p>
+        <p>ici 500mo nous suffisent pour notre site.</p>
+        <p>
+          Nous avons alors opté pour Netlify qui permet une plus grande liberté
+          sur le nom de domaine, des performances accrues (vitesse de connexion
+          au serveurs, chargement rapide des pages web) et une connexion https
+          sécurisée
+        </p>
+      </div>
+    </section>
+
+    <div id="footerContainer"></div>
+  </body>
+</html>

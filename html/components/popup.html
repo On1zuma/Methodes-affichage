@@ -1,0 +1,117 @@
+<div id="popup1" class="modal">
+  <div class="modal-content">
+    <a class="close">&times;</a>
+    <form>
+      <h2>Vue d'ensemble d'un appareil à cadre mobile</h2>
+      <div>
+        <img src="../img/image/shemacadranmob.PNG" alt="" /> <br /><br />
+        <ul>
+          <li>1: Aimant permanent générateur d'un champ d'induction</li>
+          <li>
+            2: Noyau en fer doux pour guider les lignes de force de l'aimant
+            permanent
+          </li>
+          <li>
+            3: Noyau en fer doux pour guider les lignes de force de la bobine
+            siège du courant mesuré
+          </li>
+          <li>
+            4: Bobine complète à cadre mobile dans laquelle circule le courant I
+            mesuré
+          </li>
+          <li>5: Cadre en aluminium, support de la bobine</li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="popup2" class="modal">
+  <div class="modal-content">
+    <a class="close">&times;</a>
+    <form>
+      <h2>Shéma générale de fonctionnement d’un fréquencemètre</h2>
+      <div>
+        <img src="../img/image/shémafreq.PNG" alt="" />
+        <p>
+          Signal analogique : signal continu en temps et en amplitude.
+          <br />
+          Signal numérique : signal échantillonné et quantifié, discret en temps
+          et en amplitude.<br /><br />
+
+          Le Hertz est une unité de mesure de fréquence, définie comme étant le
+          nombre de cycles (ou transitions) d'un signal par seconde. Le principe
+          de la mesure consiste à compter les cycles d'un signal en une seconde
+          à l'aide d'un compteur de fréquence, qui incrémente sa sortie en
+          binaire à chaque front montant reçu sur son entrée d'horloge. La
+          valeur décimale correspondante est ensuite affichée sur un afficheur à
+          LED à l'aide d'un décodeur.
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="popup3" class="modal">
+  <div class="modal-content">
+    <a class="close">&times;</a>
+    <form>
+      <h2>Shéma générale du tube cathodique</h2>
+      <div>
+        <img src="../img/image/shématubecato.PNG" alt="" /><br /><br />
+        <ul>
+          <li>1: électrodes déviant le faisceau</li>
+          <li>2: canon à électrons</li>
+          <li>3: faisceaux d'électrons</li>
+          <li>4: bobine pour faire converger le faisceau</li>
+          <li>5: face intérieur de l'écran recouverte de phosphore</li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="popup4" class="modal">
+  <div class="modal-content">
+    <a class="close">&times;</a>
+    <form>
+      <h2>Afficheur LCD:</h2>
+      <div>
+        <img src="../img/image/shemaosci.PNG" alt="" /><br /><br />
+        <ul>
+          <li>1 & 5: filtres polarisants</li>
+          <li>2: électrodes avant</li>
+          <li>3: électrode arrière</li>
+          <li>4: cristaux liquides</li>
+          <li>6: miroir</li>
+        </ul>
+        <br />
+        <br />
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  var modalBtns = [...document.querySelectorAll(".button")];
+  modalBtns.forEach(function (btn) {
+    btn.onclick = function () {
+      var modal = btn.getAttribute("data-modal");
+      document.getElementById(modal).style.display = "block";
+    };
+  });
+
+  var closeBtns = [...document.querySelectorAll(".close")];
+  closeBtns.forEach(function (btn) {
+    btn.onclick = function () {
+      var modal = btn.closest(".modal");
+      modal.style.display = "none";
+    };
+  });
+
+  window.onclick = function (event) {
+    if (event.target.className === "modal") {
+      event.target.style.display = "none";
+    }
+  };
+</script>

@@ -1,17 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-/*   police recuperee sur google font, google font police: montserrat   */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
-/*police secondaire */
-
 html {
   scroll-behavior: smooth;
-  /*   QUAND on appui sur un lien maintenant le scrolling n'est pas instantané  */
   overflow-x: hidden;
-  /* pour qu'il n'y ait pas de scoll de gauche à droite */
 }
-
-/* PrismJS 1.26.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript&plugins=show-language+normalize-whitespace+toolbar */
 code[class*="language-"],
 pre[class*="language-"] {
   color: #ccc;
@@ -162,7 +154,6 @@ div.code-toolbar > .toolbar > .toolbar-item > button {
   line-height: normal;
   overflow: visible;
   padding: 0;
-  /*-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none **pas utilisé ici**/
 }
 
 div.code-toolbar > .toolbar > .toolbar-item > a,
@@ -189,217 +180,120 @@ div.code-toolbar > .toolbar > .toolbar-item > span:hover {
 
 body {
   margin: 0;
-  /*   marge exterieur de l'ellement   */
   padding: 0;
-  /*   marge interieur de l'ellement   */
   font-family: "Montserrat", "sans-serif";
-  /*application des polices*/
 }
-
-/* STYLE DE LA BARRE DE NAVIGATION   */
 nav {
   display: flex;
-  /*   on aligne les elements de navigation */
   flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer les elements  */
   align-items: center;
-  /*  alligner les elements */
   border: 5px solid rgb(19, 18, 18);
-  /*  ajout d'une ligne de séparation */
 }
-
-/* travail sur titre:LES METHODES D'AFFICHAGE  */
 nav h1 a {
   color: rgb(58, 58, 58);
-  /*  couleur du titre */
   font-family: "Playfair Display", sans-serif;
-  /* changement de police */
   font-size: 30px;
-  /*  taille du titre */
   text-decoration: none;
-  /* on retire le soulignement   */
 }
-
-/* travail sur le reste de la BARRE de navigation ex:home, contact...*/
 nav .onglets a {
   text-decoration: none;
-  /* on retire le soulignement   */
   color: #000;
-  /* couleur du texte   */
   margin-right: 10px;
-  /*  ecrat exterieur entre les differents texte de la barre  */
   border-bottom: 1px solid #000;
-  /*  on ajoute notre propre soulignement  */
   padding-bottom: 2px;
-  /*  marge interieur entre le texte et le soulignement  */
 }
 
 nav .onglets a:hover {
   text-decoration: none;
-  /* on retire le soulignement   */
   color: rgba(0, 0, 0, 0.479);
-  /* couleur du texte du lien*/
   /* couleur du texte   */
   margin-right: 10px;
-  /*  ecrat exterieur entre les differents texte de la barre  */
   border-bottom: 1px solid #000;
-  /*  on ajoute notre propre soulignement  */
   padding-bottom: 0.5px;
-  /*  marge interieur entre le texte et le soulignement  */
 }
-
-/*  Travail sur le style global des onglets  */
 nav .onglets {
   margin-top: 3px;
-  /*  pour mieu aligner  */
   margin-left: 350px;
-  /*  ajout d'une marge exterieur entre TITRE et les autres ONGLETS, on eloigne le logo des liens  */
   flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
 }
 
 .desegn {
   position: absolute;
-  /* pour pouvoir deplacer l'objet sans impacter le reste du site */
-
   left: 50%;
-  /* position the left edge of the element at the middle of the parent */
-
   transform: translate(-50%, -50%);
-  /* This is a shorthand of */
   padding-bottom: 560px;
-  /* travail sur le format */
   background-color: rgba(228, 228, 228, 0.733);
-  /* couleur background */
   padding-left: 15cm;
-  /* travail sur le format */
   padding-right: 15cm;
-  /* travail sur le format */
   margin-top: -1.8cm;
-  /* travail sur le format */
-
   margin-bottom: auto;
-  /* travail sur le format */
   z-index: -5;
-  /* on place le background derriere tout */
   overflow: visible;
-  /* on laisse les depassements */
 }
 
 .desegn p {
   display: none;
-  /* on retire le texte */
 }
 
 .desegn2 {
   position: absolute;
-  /* pour pouvoir deplacer l'objet sans impacter le reste du site */
-
   left: 50%;
-  /* position the left edge of the element at the middle of the parent */
-
   transform: translate(-50%, -50%);
-  /* This is a shorthand of */
   padding-bottom: 4695px;
-  /* travail sur le format */
   background-color: rgba(228, 228, 228, 0.247);
-  /* couleur background */
   padding-left: 15cm;
-  /* travail sur le format */
   padding-right: 15cm;
-  /* travail sur le format */
   margin-top: 68.3cm;
-  /* travail sur le format */
-
   margin-bottom: auto;
-  /* travail sur le format */
   z-index: -5;
-  /* on place le background derriere tout */
   overflow: visible;
-  /* on laisse les depassements */
 }
 
 .desegn2 p {
   display: none;
-  /* on retire le texte */
 }
-
-/* On stylise notre header  le debut du site aprés la barre Logo+liens*/
 header {
   display: flex;
-  /* On aligne nos titre  */
   flex-direction: column;
-  /* On met l'allignement dans le sens qu'on veut ici en colone  */
   align-items: center;
-  /* on centre les elements  */
-  background: url("image/illuv2.PNG");
-  /* on met en background notre image rangee dans notre dossier*/
+  background: url("../img/image/illuv2.png");
   background-size: cover;
   color: aliceblue;
   padding: 210px;
-  /* Taille image HEADER */
 }
-
-/* travail sur titre h1 */
 header h1 {
   font-family: "Playfair Display", sans-serif;
-  /* changement de police */
   font-size: 50px;
-  /* On augmente la taille de h1 */
   text-align: center;
-  /* Texte maintenant aligne au format mobile aussi */
   background-color: rgba(26, 25, 25, 0.438);
-  /* couleur transparente du background */
 }
-
-/* travail sur titre h4 */
 header h4 {
   margin-top: -20px;
-  /* on réduit l'ecart entre h1 et h4 */
   font-family: "Playfair Display", sans-serif;
-  /* changement de police */
   font-size: 20px;
   text-align: center;
-  /* Texte maintenant aligne au format mobile aussi necessaire POUR EVITER LES DECALAGES */
   border-bottom: 1px solid aliceblue;
-  /* ajout d'une ligne pour le style */
   background-color: rgba(26, 25, 25, 0.432);
-  /* couleur transparente du background */
 }
 
 header a {
-  /* travail sur le BOUTON HEADER au format a*/
   text-decoration: none;
-  /* on retire le soulignement   */
   padding: 10px 20px;
-  /* ajout marge interieur de 10px haut et bas et 20px interieur droite et gauche  */
   background-color: #fff;
-  /* couleur du background du bouton */
   color: black;
-  /* couleur texte */
   border: none;
-  /* on retire l'encadrement */
   font-size: 20px;
-  /* on grossit le texte bouton */
   font-family: "Playfair Display", sans-serif;
-  /* changement de police */
   outline: rgb(37, 37, 37);
-  /* quand on click de bouton petite couleure spawn */
   cursor: pointer;
-  /* ajout apparition pointer quand on passe la souris sur le bouton */
 }
 
 .programme {
   margin-top: 0px;
-  /* on ecart notre main de 0 px du header */
   display: flex;
-  /* On aligne nos titre  */
   flex-direction: column;
-  /* On met l'allignement dans le sens qu'on veut ici en colone  */
   align-items: center;
-  /* en centre les elements  */
   font-family: "Gill Sans", sans-serif;
   margin-left: 15cm;
   margin-right: 15cm;
@@ -407,30 +301,18 @@ header a {
 
 section.programme div.content1 ul li b.lien a {
   text-decoration: none;
-  /* on retire le soulignement   */
   color: #000;
-  /* couleur du texte   */
-
   margin-right: 10px;
-  /*  ecrat exterieur entre les differents texte de la barre  */
   border-bottom: 1px solid #000;
-  /*  on ajoute notre propre soulignement  */
   padding-bottom: 0.5px;
-  /*  marge interieur entre le texte et le soulignement  */
 }
 
 section.programme div.content1 ul li b.lien a:hover {
   text-decoration: none;
-  /* on retire le soulignement   */
   color: rgb(231, 231, 231);
-  /* couleur du texte   */
-
   margin-right: 10px;
-  /*  ecrat exterieur entre les differents texte de la barre  */
   border-bottom: 1px solid rgb(231, 231, 231);
-  /*  on ajoute notre propre soulignement  */
   padding-bottom: 0.5px;
-  /*  marge interieur entre le texte et le soulignement  */
 }
 
 section.programme div.content1 div.headerr {
@@ -448,95 +330,60 @@ section.programme div.content1 h1.titlestyle {
   padding-top: 3px;
   padding-bottom: 3px;
 }
-
-/* Travail sur les cartes */
 .main {
   margin-top: 40px;
-  /* on ecart notre main de 40 px du header */
   display: flex;
-  /* On aligne nos titre  */
   flex-direction: column;
-  /* On met l'allignement dans le sens qu'on veut ici en colone  */
   align-items: center;
-  /* en centre les elements  */
 }
 
 .main .content .card .right img {
-  /*on déclare la section principale puis la div centent qui stoque les cartes puis on declare les carte et ensuite la section right et enfin on déclare l'image  */
   height: 300px;
-  /* on change la taille de l'image qui etait trop grande */
   width: 450px;
-  /* on modifi la largeur*/
   margin-top: 5px;
-  /* ajoute espace entre image et texte utile pour mobile*/
   -webkit-transition: all 1s ease;
-  /* Safari et Chrome */
   -moz-transition: all 1s ease;
-  /* Firefox */
   -ms-transition: all 1s ease;
-  /* Internet Explorer 9 */
   -o-transition: all 1s ease;
-  /* Opera */
   transition: all 1s ease;
 }
 
 .main .content .card .right:hover img {
-  /* L'image est grossie de 25% */
   -webkit-transform: scale(1.1);
-  /* Safari et Chrome */
   -moz-transform: scale(1.1);
-  /* Firefox */
   -ms-transform: scale(1.1);
-  /* Internet Explorer 9 */
   -o-transform: scale(1.1);
-  /* Opera */
   transform: scale(1.1);
 }
 
 .main .content .card {
-  /* On declare maintenant juste toute nos cartes pour travailler leur deseign*/
   display: flex;
-  /* pour aligner les elements dans notre carte sur la longueur*/
   flex-wrap: wrap;
-  /* pour si la resolution ne permet pas d'alligner on les superpose par exemple sur mobile*/
   justify-content: center;
-  /* centrer les elements  */
   margin-bottom: 25px;
-  /*  on espace nos deux cartes */
 }
 
 .main .content .card .left {
-  /* on travail sur la partie à droite maintenant */
   flex: 1 0 30%;
-  /* 30 % de notre carte sera du texte le resete sera pris par l'image*/
   padding: 20px;
-  /* espace texte bloque*/
   background-color: rgb(22, 22, 22);
-  /* couleur derriere le texte black*/
   color: #fff;
-  /* couleur du texte*/
 }
 
 .main .content .card .left a {
-  /* on travail sur notre petit lien */
   color: #fff;
-  /* couleur du texte du lien*/
 }
 
 .main .content .card .left a:hover {
-  /* on travail sur notre petit lien */
   color: rgba(255, 255, 255, 0.432);
-  /* couleur du texte du lien*/
 }
 
 .main .content .card .left a ul.z {
-  /* on travail sur notre petit lien */
   display: none;
   padding-top: 10cm;
 }
 
 .main .content .card .left a:hover div.appar {
-  /* on travail sur notre petit lien */
   display: block;
 }
 
@@ -544,180 +391,113 @@ section.programme div.content1 h1.titlestyle {
   font-size: 25px;
   color: rgb(27, 26, 26);
   display: flex;
-  /*   on aligne les elements de navigation */
   flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer l'elements  */
   align-items: center;
-  /*  alligner l'elements sur la page */
   padding-top: 35px;
-  /* on espace  au dessu*/
   padding-bottom: 1px;
-  /* on espace en dessou*/
 }
 
 footer {
-  /* travail sur le footer */
   margin-top: 40px;
-  /* on eloigne notre footer des objets au dessu */
   border-top: 5px solid #131212;
-  /* on crée une ligne de delimitation entre le footer et le reste du site */
   background-color: #000;
-  /* on met le background en noir*/
   color: #fff;
-  /* texte en blanc */
   padding: 30px 100px;
-  /* on redimensionne la bordure du footer haut/bas droite/gauche*/
   flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
 }
 
 footer h1 {
   font-family: "Playfair Display", sans-serif;
-  /* style de police du texte titre   */
   border-bottom: 1px solid white;
-  /*  ajout d'un soulignement  */
   width: 5cm;
-  /* longueur de la ligne 13% de la page    */
   padding-bottom: 2px;
-  /* ecart entre titre et ligne   */
   font-size: 40px;
-  /*  taille du titre */
   align-items: center;
-  /*  alligner l'elements sur la page */
 }
 
 footer .contacts {
-  /* notre div qui stoque toute les colonnes  */
   margin-top: -10px;
-  /*on reduit l'espace entre le titre et les paragraphes */
   display: flex;
-  /* on aligne nos differents paragraphe */
   flex-wrap: wrap;
-  /* si on peut pas aligner en aligne pas */
 }
 
 footer .contacts .contact {
-  /* on travail ici sur chaque colone */
   margin-right: 30px;
   padding: 10px;
 }
 
 footer .contacts .contact p {
-  /* on travail ici sur chaque colone texte */
   max-width: 450px;
   color: white;
 }
 
 footer .contacts .contact a {
-  /* on travail ici sur la colone lien */
   max-width: 450px;
   color: white;
 }
 
 footer .contacts .contact a:hover {
-  /* on travail ici sur la colone lien */
   max-width: 450px;
   color: rgba(255, 255, 255, 0.507);
 }
 
 footer #nous {
-  /* on passe par le lien, id et non pas une classe pour modifier nous */
   color: rgb(122, 120, 120);
-  /* on change la couleur du petit texte en bas de page */
 }
 
 footer #nous a {
   color: rgb(122, 120, 120);
-  /* on change la couleur du petit lien */
 }
 
 h2 {
   color: rgb(71, 70, 70);
-  /*  couleur du titre */
   font-family: "Playfair Display", sans-serif;
-  /* style de police du texte titre   */
   font-size: 45px;
   color: rgb(27, 26, 26);
   display: flex;
-  /*   on aligne les elements de navigation */
   flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer l'elements  */
   align-items: center;
-  /*  alligner l'elements sur la page */
   padding-top: 35px;
-  /* on espace  au dessu*/
   padding-bottom: 1px;
-  /* on espace en dessou*/
 }
 
 .imirage img {
-  /* Travail sur Image */
   display: flex;
-  /*   on aligne les elements de navigation */
   flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer l'elements  */
   align-items: center;
-  /*  alligner l'elements sur la page */
   padding-top: 35px;
-  /* on espace  au dessu*/
   padding-bottom: 1px;
-  /* on espace en dessou*/
 }
 
 .lavideo {
-  /* Travail sur video */
-
   display: flex;
-  /*   on aligne les elements de navigation */
   flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer l'elements  */
   align-items: center;
-  /*  alligner l'elements sur la page */
   padding-top: 10px;
-  /* on espace  au dessu*/
   padding-bottom: 40px;
-  /* on espace en dessou*/
   margin-top: -1.6cm;
-  /*background: linear-gradient(180deg, rgba(0, 0, 0, 0.048), rgba(255, 255, 255, 0.062));*/
   margin-left: 23.5%;
   margin-right: 23.5%;
   z-index: -1;
 }
-
-/*https://developer.mozilla.org/fr/ bibliotheque officiel de programmation */
-
 /*STYLE des images dans l'accordeon */
 .accordion-item-body-content img {
-  /*on déclare la section principale puis la div centent qui stoque les cartes puis on declare les carte et ensuite la section right et enfin on déclare l'image  */
   height: 300px;
-  /* on change la taille de l'image qui etait trop grande */
   width: 500px;
-  /* on modifi la largeur*/
   margin-top: 5px;
-  /* ajoute espace entre image et texte utile pour mobile*/
 }
-
-/* travail sur l'accordeon global */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-/* police d'ecriture*/
-
 .accordion {
-  /* travail sur style de l'accordeon global */
   width: 90%;
   max-width: 1000px;
   margin: 2rem auto;
 }
 
 .accordion-item {
-  /* travail sur les items de l'accordeon  */
   background-color: #fff;
   color: #111;
   margin: 1rem 0;
@@ -726,7 +506,6 @@ h2 {
 }
 
 .accordion-item-header {
-  /* travail sur style de header*/
   padding: 0.5rem 3rem 0.5rem 1rem;
   min-height: 3.5rem;
   line-height: 1.25rem;
@@ -738,7 +517,6 @@ h2 {
 }
 
 .accordion-item-header::after {
-  /* travail sur style de header aprés ouverture*/
   content: "\002B";
   font-size: 2rem;
   position: absolute;
@@ -746,19 +524,16 @@ h2 {
 }
 
 .accordion-item-header.active::after {
-  /* travail sur style de header ouvert*/
   content: "\2212";
 }
 
 .accordion-item-body {
-  /* travail sur les paragraphe en general*/
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
 
 .accordion-item-body-content {
-  /* travail sur le contenu du texte */
   padding: 1rem;
   line-height: 1.5rem;
   border-top: 1px solid;
@@ -766,22 +541,14 @@ h2 {
 }
 
 @media (max-width: 1230px) {
-  /* adaptation mobile*/
   html {
     font-size: 14px;
   }
 }
-
-/* fin travail sur l'accordeon global */
-
 texterreur {
-  /* texte d'erreur cache */
   color: white;
 }
-
-/* ajout de propriete en fonction de la resolution grace à une fonction  */
 @media screen and (max-width: 1230px) {
-  /*  conditions si la résolution est trop petite <680px comme sur mobile on retire le margin entre logo et onglets */
   nav .onglets a {
     display: none;
   }
@@ -813,7 +580,6 @@ texterreur {
   }
 
   .lavideo {
-    /* Travail sur video */
     display: none;
   }
 
@@ -827,13 +593,9 @@ texterreur {
 
   nav h1 {
     display: flex;
-    /*   on aligne les elements de navigation */
     flex-wrap: wrap;
-    /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
     justify-content: center;
-    /* centrer l'elements  */
     align-items: center;
-    /*  alligner l'elements sur la page */
   }
 
   .main .content .card .right img {
@@ -842,64 +604,46 @@ texterreur {
 
   .main .card {
     margin: 10px;
-    /*  ecart de 10px */
   }
 
   .main .content .card .right img {
-    /*  travail sur la taille de l'image  */
     height: 200px;
-    /*  taille de l'image  */
     width: 100%;
-    /*  surface de l'image  */
     margin-top: -0px;
-    /*  marge entre texte et image */
     margin-bottom: 40px;
-    /* marge entre les cartes */
   }
 
   .main .content .card {
     display: block;
-    /*  on aligne image avec texte  */
   }
 
   footer {
     padding: 30px;
-    /* Taille footer */
   }
 
   header {
     padding: 100px;
-    /* Taille image HEADER */
   }
 }
-
-/*   travail sur les images profil de la page source*/
 .alligner {
   display: flex;
-  /*   on aligne les elements de navigation */
   flex-wrap: wrap;
-  /* pour eviter des problemes si l'alignement n'est pas possible par exemple sur mobile  */
   justify-content: center;
-  /* centrer les elements  */
   align-items: center;
-  /*  alligner les elements */
 }
 
 .container {
-  /* image profil  */
   position: relative;
   width: 25%;
 }
 
 .image {
-  /*  format */
   display: block;
   width: 100%;
   height: auto;
 }
 
 .overlay {
-  /*  effet avec apparition des noms */
   position: absolute;
   top: 0;
   bottom: 0;
@@ -913,7 +657,6 @@ texterreur {
 }
 
 .container:hover .overlay {
-  /*  effet avec apparition des noms */
   opacity: 1;
 }
 
@@ -928,7 +671,6 @@ texterreur {
 }
 
 #scroll_to_top {
-  /*  bouton retour en haut  */
   position: fixed;
   width: 25px;
   height: 25px;
@@ -936,6 +678,8 @@ texterreur {
   right: 30px;
   padding-right: 30px;
   opacity: 0.7;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
 }
 
 #scroll_to_top img {
@@ -943,33 +687,21 @@ texterreur {
 }
 
 .versmenu a {
-  /*  lien vers notre menu detail  */
   color: #000;
-  /* couleur du texte   */
   margin-right: 10px;
-  /*  ecrat exterieur entre les differents texte de la barre  */
   padding-bottom: 5px;
-  /*  marge interieur entre le texte et le soulignement  */
   display: flex;
   justify-content: center;
-  /*  On centre sur x */
   align-items: center;
-  /*  On centre sur y */
 }
-
-/*  Chargement de la page */
-
 .loader {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 270%;
-  /*  LONGUEUR DU FOND NOIR */
   background: black;
   display: flex;
   justify-content: center;
-  /*  On centre sur x */
   align-items: center;
-  /*  On centre sur y */
 }
 
 .lettre {
@@ -981,7 +713,6 @@ texterreur {
 }
 
 @keyframes flash {
-  /*   effet flash pour le chargement */
   0% {
     color: rgb(0, 0, 0);
     text-shadow: 0 0 7px rgb(0, 0, 0);
@@ -999,7 +730,6 @@ texterreur {
 }
 
 .lettre:nth-child(1) {
-  /*  ajout de delai pour faire lettre par lettre   */
   animation-delay: 0.1s;
 }
 
@@ -1042,7 +772,7 @@ texterreur {
 .fondu-out {
   animation-delay: 2.5s;
   opacity: 0;
-  transition: opacity 2.3s ease-in-out;
+  transition: opacity 1s ease-in-out;
   pointer-events: none;
 }
 

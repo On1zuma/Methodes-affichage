@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", "sans-serif";
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgb(19, 18, 18);
+}
+nav h1 a {
+  color: rgb(58, 58, 58);
+  font-family: "Playfair Display", sans-serif;
+  font-size: 30px;
+  text-decoration: none;
+}
+nav .onglets a {
+  text-decoration: none;
+  color: #000;
+  margin-right: 10px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+}
+
+nav .onglets a:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.479);
+  /* couleur du texte   */
+  margin-right: 10px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.5px;
+}
+nav .onglets {
+  margin-top: 3px;
+  margin-left: 350px;
+  flex-wrap: wrap;
+}
+
+.desegn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 700px;
+  background-color: rgba(228, 228, 228, 0.247);
+  padding-left: 20cm;
+  padding-right: 20cm;
+  margin-top: 10.5cm;
+  margin-bottom: auto;
+  z-index: -5;
+  overflow: visible;
+}
+
+.desegn p {
+  display: none;
+}
+
+.desegn2 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 1000px;
+  background-color: rgba(228, 228, 228, 0.247);
+  padding-left: 20cm;
+  padding-right: 20cm;
+  margin-top: 13.3cm;
+  margin-bottom: auto;
+  z-index: -5;
+  overflow: visible;
+}
+
+.desegn2 p {
+  display: none;
+}
+
+.imiback img {
+  position: absolute;
+  z-index: -5;
+  transform: translate(0, 0);
+
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+  max-height: 1200px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("../img/image/illuv2.png");
+  background-size: cover;
+  color: aliceblue;
+  padding: 210px;
+}
+header h1 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  background-color: rgba(26, 25, 25, 0.438);
+}
+header h4 {
+  margin-top: -20px;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid aliceblue;
+  background-color: rgba(26, 25, 25, 0.432);
+}
+
+header a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: black;
+  border: none;
+  font-size: 20px;
+  font-family: "Playfair Display", sans-serif;
+  outline: rgb(37, 37, 37);
+  cursor: pointer;
+}
+.main {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .content .card .right img {
+  height: 300px;
+  width: 450px;
+  margin-top: 5px;
+}
+
+.main .content .card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.main .content .card .left {
+  flex: 1 0 30%;
+  padding: 20px;
+  background-color: rgb(22, 22, 22);
+  color: #fff;
+}
+
+.main .content .card .left a {
+  color: #fff;
+}
+
+.main .content .card .left a:hover {
+  color: rgba(255, 255, 255, 0.479);
+}
+.main2 {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main2 .content .card .right img {
+  height: 300px;
+  width: 450px;
+  margin-top: 5px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.main2 .content .card .right:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.main2 .content .card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.main2 .content .card .left {
+  flex: 1 0 30%;
+  padding: 20px;
+  background-color: rgba(238, 238, 238, 0.705);
+  color: rgb(0, 0, 0);
+}
+
+.main2 .content .card .left a {
+  color: rgb(0, 0, 0);
+}
+
+.main2 .content .card .left a:hover {
+  color: rgba(0, 0, 0, 0.438);
+}
+
+.textintro .intro {
+  font-size: 25px;
+  color: rgb(27, 26, 26);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 1px;
+}
+
+footer {
+  margin-top: 40px;
+  border-top: 5px solid #131212;
+  background-color: #000;
+  color: #fff;
+  padding: 30px 100px;
+  flex-wrap: wrap;
+}
+
+footer h1 {
+  font-family: "Playfair Display", sans-serif;
+  border-bottom: 1px solid white;
+  width: 5cm;
+  padding-bottom: 2px;
+  font-size: 40px;
+  align-items: center;
+}
+
+footer .contacts {
+  margin-top: -10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer .contacts .contact {
+  margin-right: 30px;
+  padding: 10px;
+}
+
+footer .contacts .contact p {
+  max-width: 450px;
+  color: white;
+}
+
+footer .contacts .contact a {
+  max-width: 450px;
+  color: white;
+}
+
+footer .contacts .contact a:hover {
+  max-width: 450px;
+  color: rgba(255, 255, 255, 0.507);
+}
+
+footer #nous {
+  color: rgb(122, 120, 120);
+}
+
+footer #nous a {
+  color: rgb(122, 120, 120);
+}
+
+h2 {
+  color: rgb(71, 70, 70);
+  font-family: "Playfair Display", sans-serif;
+  font-size: 45px;
+  color: rgb(27, 26, 26);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 1px;
+}
+
+.imirage img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 1px;
+}
+
+.lavideo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  margin-top: -1.6cm;
+  margin-left: 23.5%;
+  margin-right: 23.5%;
+  z-index: -1;
+}
+/*STYLE des images dans l'accordeon */
+.accordion-item-body-content img {
+  height: 300px;
+  width: 500px;
+  margin-top: 5px;
+}
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.accordion-item {
+  background-color: #fff;
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+@media (max-width: 1230px) {
+  html {
+    font-size: 14px;
+  }
+}
+texterreur {
+  color: white;
+}
+@media screen and (max-width: 1230px) {
+  nav .onglets a {
+    display: none;
+  }
+
+  oscillateur {
+    display: none;
+  }
+
+  .desegn {
+    display: none;
+  }
+
+  .imiback {
+    display: none;
+  }
+
+  .desegn2 {
+    display: none;
+  }
+
+  .lavideo {
+    display: none;
+  }
+
+  texterreur {
+    color: black;
+  }
+
+  imirage img {
+    display: none;
+  }
+
+  nav h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main .content .card .right img {
+    display: none;
+  }
+
+  .main .card {
+    margin: 10px;
+  }
+
+  .main .content .card .right img {
+    height: 200px;
+    width: 100%;
+    margin-top: -0px;
+    margin-bottom: 40px;
+  }
+
+  .main .content .card {
+    display: block;
+  }
+
+  footer {
+    padding: 30px;
+  }
+
+  .main2 .content .card .right img {
+    display: none;
+  }
+
+  .main2 .card {
+    margin: 10px;
+  }
+
+  .main2 .content .card .right img {
+    height: 200px;
+    width: 100%;
+    margin-top: -0px;
+    margin-bottom: 40px;
+  }
+
+  .main2 .content .card {
+    display: block;
+  }
+
+  header {
+    padding: 100px;
+  }
+}
+
+#scroll_to_top {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  bottom: 50px;
+  right: 30px;
+  padding-right: 30px;
+  opacity: 0.7;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+#scroll_to_top img {
+  width: 68px;
+}
