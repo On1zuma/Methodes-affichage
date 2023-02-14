@@ -457,6 +457,7 @@ texterreur {
 }
 
 #scroll_to_top {
+  display: none;
   position: fixed;
   width: 25px;
   height: 25px;
