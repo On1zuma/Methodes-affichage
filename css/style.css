@@ -14,6 +14,7 @@ body {
   padding: 0;
   font-family: "Montserrat", "sans-serif";
 }
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +24,7 @@ nav {
 }
 nav h1 a {
   color: rgb(58, 58, 58);
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   font-size: 30px;
   text-decoration: none;
 }
@@ -94,14 +95,14 @@ header {
   padding: 210px;
 }
 header h1 {
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   font-size: 50px;
   text-align: center;
   background-color: rgba(26, 25, 25, 0.438);
 }
 header h4 {
   margin-top: -20px;
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   font-size: 20px;
   text-align: center;
   border-bottom: 1px solid aliceblue;
@@ -115,19 +116,19 @@ header a {
   color: black;
   border: none;
   font-size: 20px;
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   outline: rgb(37, 37, 37);
   cursor: pointer;
+  border-radius: 2px;
 }
 
 header a:hover {
   text-decoration: none;
   padding: 10px 20px;
-  background-color: rgba(206, 206, 206, 0.13);
-  color: rgb(255, 255, 255);
+  background-color: #ffffffb7;
   border: none;
   font-size: 20px;
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   outline: rgb(37, 37, 37);
   cursor: pointer;
 }
@@ -200,7 +201,7 @@ footer {
 }
 
 footer h1 {
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   border-bottom: 1px solid white;
   width: 5cm;
   padding-bottom: 2px;
@@ -244,7 +245,7 @@ footer #nous a {
 
 h2 {
   color: rgb(71, 70, 70);
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   font-size: 45px;
   color: rgb(27, 26, 26);
   display: flex;

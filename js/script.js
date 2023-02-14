@@ -11,7 +11,7 @@ const accordionItemHeaders = document.querySelectorAll(
 
 accordionItemHeaders.forEach((accordionItemHeader) => {
   accordionItemHeader.addEventListener("click", (event) => {
-    // Programme JAVA SCRIPT ANIMATION DU MENU DEROULANT
+    // Programme javascript ANIMATION DU MENU DEROULANT
     //pour avoir seulement un onglet qui defile , le maximum
 
     // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
