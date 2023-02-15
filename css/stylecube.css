@@ -4,7 +4,11 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   padding: 0;
@@ -114,22 +118,15 @@ section.cube2 a {
   color: black;
   border: none;
   font-size: 20px;
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   outline: rgb(37, 37, 37);
   cursor: pointer;
 }
 
 section.cube2 a:hover {
-  text-decoration: none;
-  padding: 10px 20px;
-  background-color: rgba(206, 206, 206, 0.13);
-  color: rgb(255, 255, 255);
-  border: none;
-  font-size: 20px;
-  font-family: "Playfair Display", sans-serif;
-  outline: rgb(37, 37, 37);
-  cursor: pointer;
+  background-color: #ffffffb6;
 }
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -139,8 +136,8 @@ nav {
 }
 nav h1 a {
   color: rgb(58, 58, 58);
-  font-family: "Playfair Display", sans-serif;
-  font-size: 30px;
+  /* font-family: "Playfair Display", sans-serif; */
+  font-size: 1.8rem;
   text-decoration: none;
 }
 nav .onglets a {
@@ -210,14 +207,14 @@ header {
   padding: 210px;
 }
 header h1 {
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   font-size: 50px;
   text-align: center;
   background-color: rgba(26, 25, 25, 0.438);
 }
 header h4 {
   margin-top: -20px;
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   font-size: 20px;
   text-align: center;
   border-bottom: 1px solid aliceblue;
@@ -231,7 +228,7 @@ header a {
   color: black;
   border: none;
   font-size: 20px;
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   outline: rgb(37, 37, 37);
   cursor: pointer;
 }
@@ -243,7 +240,7 @@ header a:hover {
   color: rgb(255, 255, 255);
   border: none;
   font-size: 20px;
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   outline: rgb(37, 37, 37);
   cursor: pointer;
 }
@@ -316,7 +313,7 @@ footer {
 }
 
 footer h1 {
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   border-bottom: 1px solid white;
   width: 5cm;
   padding-bottom: 2px;
@@ -360,7 +357,7 @@ footer #nous a {
 
 h2 {
   color: rgb(71, 70, 70);
-  font-family: "Playfair Display", sans-serif;
+  /* font-family: "Playfair Display", sans-serif; */
   font-size: 45px;
   color: rgb(27, 26, 26);
   display: flex;
@@ -380,30 +377,11 @@ h2 {
   padding-bottom: 1px;
 }
 
-.lavideo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 40px;
-  margin-top: -1.6cm;
-  margin-left: 23.5%;
-  margin-right: 23.5%;
-  z-index: -1;
-}
-
 .lavideocb {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 40px;
-  margin-top: -1.6cm;
-  margin-left: 43.5%;
-  margin-right: 43.5%;
-  z-index: -1;
 }
 
 .lavideocb video {
@@ -484,6 +462,17 @@ texterreur {
   color: white;
 }
 @media screen and (max-width: 1230px) {
+  .lavideocb {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lavideocb video {
+    width: 100%;
+  }
+
   .carousel-items {
     display: flex;
     overflow-x: scroll;
@@ -510,6 +499,7 @@ texterreur {
 
   section.cube2 {
     background: rgba(255, 255, 255, 0.719);
+    box-shadow: none;
   }
 
   section.cube2 p {
@@ -530,7 +520,7 @@ texterreur {
     color: rgb(255, 255, 255);
     border: none;
     font-size: 20px;
-    font-family: "Playfair Display", sans-serif;
+    /* font-family: "Playfair Display", sans-serif; */
     outline: rgb(37, 37, 37);
     cursor: pointer;
   }
@@ -542,7 +532,7 @@ texterreur {
     color: rgb(0, 0, 0);
     border: none;
     font-size: 20px;
-    font-family: "Playfair Display", sans-serif;
+    /* font-family: "Playfair Display", sans-serif; */
     outline: rgb(172, 172, 172);
     cursor: pointer;
   }
