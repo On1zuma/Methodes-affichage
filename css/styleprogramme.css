@@ -309,9 +309,9 @@ section.programme div.content1 ul li b.lien a {
 
 section.programme div.content1 ul li b.lien a:hover {
   text-decoration: none;
-  color: rgb(231, 231, 231);
+  color: #333;
   margin-right: 10px;
-  border-bottom: 1px solid rgb(231, 231, 231);
+  border-bottom: 1px solid #333;
   padding-bottom: 0.5px;
 }
 
